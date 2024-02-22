@@ -12,11 +12,11 @@ const Header = () => {
   let [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full max-w-7xl">
+    <div className="w-full">
       <div className="items-center justify-between px-7 py-4 md:flex md:px-10">
         {/* サイトのロゴ */}
-        <div className="flex cursor-pointer items-center gap-1 text-2xl font-bold">
-          <span className="text-primary hover:text-white">Fuuma.net</span>
+        <div className="flex cursor-pointer text-2xl font-bold">
+          <span className=" hover:text-white">Fuuma.net</span>
         </div>
 
         {/* モバイルの時のハンバーガー */}
