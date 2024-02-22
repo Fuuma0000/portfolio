@@ -16,7 +16,7 @@ const Header = () => {
       <div className="items-center justify-between px-7 py-4 md:flex md:px-10">
         {/* サイトのロゴ */}
         <div className="flex cursor-pointer text-2xl font-bold">
-          <span className=" hover:text-white">Fuuma.net</span>
+          <span className=" text-primary hover:text-white">Fuuma.net</span>
         </div>
 
         {/* モバイルの時のハンバーガー */}

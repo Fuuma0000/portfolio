@@ -1,5 +1,9 @@
 /* styles.css */
 
+body {
+  background: #1f1f37;
+}
+
 .no-drag {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
