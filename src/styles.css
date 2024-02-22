@@ -1,0 +1,6 @@
+/* styles.css */
+
+.no-drag {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+}
