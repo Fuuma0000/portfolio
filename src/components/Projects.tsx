@@ -26,7 +26,7 @@ const Project: React.FC<ProjectProps> = ({
       <h2 className="mb-2 text-2xl font-bold text-white">{title}</h2>
       <p className="mb-4 text-white">{description}</p>
       <div className="mb-4 text-white">
-        <strong>Technologies:</strong>
+        <strong>technologies:</strong>
         <ul className="list-disc pl-4">
           {technologies.map((tech: string, index: number) => (
             <li key={index}>{tech}</li>
@@ -35,8 +35,7 @@ const Project: React.FC<ProjectProps> = ({
       </div>
 
       <div className="">
-        <strong className="text-white">Links:</strong>
-        <ul className="list-none pl-4">
+        <ul className="list-none">
           {links.map((link: Link, index: number) => (
             <li key={index}>
               <a
