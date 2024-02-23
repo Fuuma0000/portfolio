@@ -1,28 +1,28 @@
 import { animateScroll as scroll } from 'react-scroll';
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 const ScrollToTopButton = () => {
   const controls = useAnimation();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleMouseMoveEvent = (e: MouseEvent) => {
-      handleMouseMove(e);
-    };
+  // useEffect(() => {
+  //   const handleMouseMoveEvent = (e: MouseEvent) => {
+  //     handleMouseMove(e);
+  //   };
 
-    // マウスが動いたときのイベントリスナーを設定
-    window.addEventListener('mousemove', handleMouseMoveEvent);
+  //   // マウスが動いたときのイベントリスナーを設定
+  //   window.addEventListener('mousemove', handleMouseMoveEvent);
 
-    // コンポーネントがアンマウントされるときにイベントリスナーをクリーンアップ
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMoveEvent);
-    };
-  }, []); // 空の依存配列を指定して、コンポーネントがマウントされたときだけ実行されるようにする
+  //   // コンポーネントがアンマウントされるときにイベントリスナーをクリーンアップ
+  //   return () => {
+  //     window.removeEventListener('mousemove', handleMouseMoveEvent);
+  //   };
+  // }, []); // 空の依存配列を指定して、コンポーネントがマウントされたときだけ実行されるようにする
 
-  const handleMouseMove = (e: MouseEvent) => {
-    // setMousePosition({ x: e.clientX, y: e.clientY });
-  };
+  // const handleMouseMove = (e: MouseEvent) => {
+  //   setMousePosition({ x: e.clientX, y: e.clientY });
+  // };
 
   const scrollToTop = async () => {
     await new Promise((resolve) => setTimeout(resolve, 500));
@@ -77,9 +77,11 @@ const ScrollToTopButton = () => {
         {/* 黒い丸 */}
         <div
           className="absolute z-20 h-5 w-5 rounded-full bg-black"
-          style={{
-            transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-          }}
+          style={
+            {
+              // transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
+            }
+          }
         ></div>
       </div>
     </motion.button>
