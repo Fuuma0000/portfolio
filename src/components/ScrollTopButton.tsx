@@ -17,11 +17,14 @@ const ScrollToTopButton = () => {
     });
 
     // ボタンを上に移動させるアニメーション
-    await controls.start({ y: -1980, transition: { duration: 2 } });
+    await controls.start({
+      y: -1980,
+      transition: { duration: 2 },
+    });
 
     // アニメーションが完了したら非表示にし、画面の下側に移動させる
     await controls.start({
-      y: 100,
+      y: 30,
       visibility: 'hidden',
     });
 
