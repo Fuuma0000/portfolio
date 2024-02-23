@@ -91,7 +91,7 @@ const Projects = ({ index }: { index: number }) => {
         },
         {
           url: 'https://protopedia.net/prototype/4905',
-          displayName: 'Prototype',
+          displayName: 'Protopedia(詳細情報)',
         },
       ],
     },
