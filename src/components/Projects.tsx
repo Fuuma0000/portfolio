@@ -25,7 +25,7 @@ const Project: React.FC<ProjectProps & { index: number }> = ({
 
   return (
     <div className={`my-2 rounded-lg border p-8 shadow-lg ${borderClass}`}>
-      <img src={image} alt={title} className="mb-4 rounded-lg" />
+      <img src={image} alt={title} className="mb-4 h-auto w-full rounded-lg" />
       <h2 className="mb-2 text-2xl font-bold text-white">{title}</h2>
       <p className="mb-4 text-white">{description}</p>
       <div className="mb-4 text-white">
