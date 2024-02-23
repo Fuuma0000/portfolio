@@ -1,7 +1,20 @@
-import heroImg from '@/assets/eye.png';
 import '@/styles.css';
+import { useEffect, useState } from 'react';
+import eyeImg from '@/assets/eye.png';
 
 const Profile = ({ index }: { index: number }) => {
+  const [heroImg, setHeroImg] = useState<string>('');
+
+  useEffect(() => {
+    // 画像のプリロード
+    const img = new Image();
+    img.src = eyeImg; // eyeImg を使う
+    img.onload = () => {
+      // 画像が読み込まれたら state を更新
+      setHeroImg(eyeImg);
+    };
+  }, []);
+
   return (
     <div className={`bg-${index % 2 === 0 ? 'even' : 'odd'} `} id="profile">
       {/* 真ん中に大きく表示する */}
