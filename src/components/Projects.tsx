@@ -187,7 +187,7 @@ const Projects = ({ index }: { index: number }) => {
         </h1>
 
         {/* プロジェクトを3つずつ横に表示 */}
-        <div className="-mx-4 flex flex-wrap justify-center">
+        <div className="-mx-4 flex flex-wrap justify-start">
           {projects.map((project, index) => (
             <div key={index} className="mb-8 w-full px-4 sm:w-1/2 lg:w-1/3">
               <Project {...project} />
