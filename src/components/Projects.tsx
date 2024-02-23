@@ -1,5 +1,6 @@
 import kisyoutenketuImg from '../assets/kisyoutenketu.webp';
 import koteAlertImg from '../assets/kotealert.webp';
+import portfolioImg from '../assets/portfolio.webp';
 
 interface Link {
   url: string;
@@ -95,11 +96,10 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
-      image: kisyoutenketuImg,
-      title: '起床転結RTA',
-      description:
-        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
-      technologies: ['React', 'Node.js', 'Tailwind CSS'],
+      image: portfolioImg,
+      title: 'ポートフォリオ',
+      description: '新しい技術を試しつつ、ポートフォリオ作りました',
+      technologies: ['React', 'Tailwind CSS', 'Bun', 'Vite'],
       links: [
         {
           url: 'https://github.com/Jin2003/kishoutenketsu_rta',
