@@ -1,12 +1,33 @@
 import { animateScroll as scroll } from 'react-scroll';
 import { motion, useAnimation } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const ScrollToTopButton = () => {
   const controls = useAnimation();
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMoveEvent = (e: MouseEvent) => {
+      handleMouseMove(e);
+    };
+
+    // マウスが動いたときのイベントリスナーを設定
+    window.addEventListener('mousemove', handleMouseMoveEvent);
+
+    // コンポーネントがアンマウントされるときにイベントリスナーをクリーンアップ
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMoveEvent);
+    };
+  }, []); // 空の依存配列を指定して、コンポーネントがマウントされたときだけ実行されるようにする
+
+  const handleMouseMove = (e: MouseEvent) => {
+    // setMousePosition({ x: e.clientX, y: e.clientY });
+  };
 
   const scrollToTop = async () => {
     await new Promise((resolve) => setTimeout(resolve, 500));
 
+    controls.stop();
     // 一旦下に少しボタンが移動する
     await controls.start({ y: 50 });
 
@@ -18,7 +39,7 @@ const ScrollToTopButton = () => {
 
     // ボタンを上に移動させるアニメーション
     await controls.start({
-      y: -1980,
+      y: -1980, // 画面下端よりも上に位置する
       transition: { duration: 2 },
     });
 
@@ -47,14 +68,19 @@ const ScrollToTopButton = () => {
       <div className="flex h-full w-full items-center justify-center">
         {/* 白い楕円 */}
         <div
-          className="relative z-10 h-9 w-14 flex-shrink-0"
+          className="relative z-10 h-9 w-14 flex-shrink-0 overflow-hidden"
           style={{
-            borderRadius: '50% 50% 50% 50% / 50% 50% 50% 50% ',
+            borderRadius: '50% 50% 50% 50% / 50% 50% 50% 50%',
             backgroundColor: 'white',
           }}
         ></div>
         {/* 黒い丸 */}
-        <div className="absolute left-1/2 top-1/2 z-20 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-black"></div>
+        <div
+          className="absolute z-20 h-5 w-5 rounded-full bg-black"
+          style={{
+            transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
+          }}
+        ></div>
       </div>
     </motion.button>
   );
