@@ -75,6 +75,108 @@ const Projects = ({ index }: { index: number }) => {
         },
       ],
     },
+    {
+      image: kisyoutenketuImg,
+      title: '起床転結RTA',
+      description:
+        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
+      technologies: ['React', 'Node.js', 'Tailwind CSS'],
+      links: [
+        {
+          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
+          displayName: 'Github',
+        },
+        {
+          url: 'https://example.com/project1',
+          displayName: 'Demo',
+        },
+      ],
+    },
+    {
+      image: kisyoutenketuImg,
+      title: '起床転結RTA',
+      description:
+        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
+      technologies: ['React', 'Node.js', 'Tailwind CSS'],
+      links: [
+        {
+          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
+          displayName: 'Github',
+        },
+        {
+          url: 'https://example.com/project1',
+          displayName: 'Demo',
+        },
+      ],
+    },
+    {
+      image: kisyoutenketuImg,
+      title: '起床転結RTA',
+      description:
+        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
+      technologies: ['React', 'Node.js', 'Tailwind CSS'],
+      links: [
+        {
+          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
+          displayName: 'Github',
+        },
+        {
+          url: 'https://example.com/project1',
+          displayName: 'Demo',
+        },
+      ],
+    },
+    {
+      image: kisyoutenketuImg,
+      title: '起床転結RTA',
+      description:
+        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
+      technologies: ['React', 'Node.js', 'Tailwind CSS'],
+      links: [
+        {
+          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
+          displayName: 'Github',
+        },
+        {
+          url: 'https://example.com/project1',
+          displayName: 'Demo',
+        },
+      ],
+    },
+    {
+      image: kisyoutenketuImg,
+      title: '起床転結RTA',
+      description:
+        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
+      technologies: ['React', 'Node.js', 'Tailwind CSS'],
+      links: [
+        {
+          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
+          displayName: 'Github',
+        },
+        {
+          url: 'https://example.com/project1',
+          displayName: 'Demo',
+        },
+      ],
+    },
+    {
+      image: kisyoutenketuImg,
+      title: '起床転結RTA',
+      description:
+        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
+      technologies: ['React', 'Node.js', 'Tailwind CSS'],
+      links: [
+        {
+          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
+          displayName: 'Github',
+        },
+        {
+          url: 'https://example.com/project1',
+          displayName: 'Demo',
+        },
+      ],
+    },
   ];
 
   return (
@@ -82,10 +184,14 @@ const Projects = ({ index }: { index: number }) => {
       <div className="mx-auto h-full max-w-7xl p-8">
         <h1 className="mb-8 text-4xl font-semibold">My Projects</h1>
 
-        {/* Render each project */}
-        {projects.map((project, index) => (
-          <Project key={index} {...project} />
-        ))}
+        {/* プロジェクトを3つずつ横に表示 */}
+        <div className="-mx-4 flex flex-wrap justify-center">
+          {projects.map((project, index) => (
+            <div key={index} className="mb-8 w-full px-4 sm:w-1/2 lg:w-1/3">
+              <Project {...project} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
