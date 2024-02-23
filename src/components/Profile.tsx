@@ -19,15 +19,15 @@ const Profile = ({ index }: { index: number }) => {
           <div className="mb-4 lg:pr-32">
             <table className="w-full">
               <tbody>
-                <tr className="mb-16 flex flex-col items-center">
+                <tr className="mb-4 flex flex-col items-center md:mb-16">
                   <td className="text-sm text-white md:text-base">Name</td>
                   <td className="text-lg text-white md:text-2xl">Fuuma</td>
                 </tr>
-                <tr className="mb-16 flex flex-col items-center">
+                <tr className="mb-4 flex flex-col items-center md:mb-16">
                   <td className="text-sm text-white md:text-base">Job</td>
                   <td className="text-lg text-white md:text-2xl">学生(26卒)</td>
                 </tr>
-                <tr className="mb-16 flex flex-col items-center">
+                <tr className="mb-4 flex flex-col items-center md:mb-16">
                   <td className="text-sm text-white md:text-base">AboutMe</td>
                   <td className="max-w-[400px] text-lg text-white md:text-2xl">
                     よろしくお願いします。よろしくお願いします。よろしくお願いします。
