@@ -1,7 +1,7 @@
 const About = ({ index }: { index: number }) => {
   return (
     <div className={`bg-${index % 2 === 0 ? 'even' : 'odd'} `} id="about">
-      <div className="mx-auto flex h-full max-w-7xl  flex-col justify-center md:h-screen ">
+      <div className="mx-auto flex h-screen  max-w-7xl flex-col justify-center ">
         {/* 真ん中に大きく表示する */}
         <h1 className="mb-8 text-center text-3xl font-semibold text-primary md:mb-0">
           About
