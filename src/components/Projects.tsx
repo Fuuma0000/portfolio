@@ -127,10 +127,6 @@ const Projects = ({ index }: { index: number }) => {
           url: 'https://github.com/Jin2003/kishoutenketsu_rta',
           displayName: 'Github',
         },
-        {
-          url: 'https://example.com/project1',
-          displayName: 'Demo',
-        },
       ],
     },
   ];
