@@ -13,7 +13,12 @@ const Profile = ({ index }: { index: number }) => {
         <div className="flex w-full flex-col items-center justify-between md:flex-row">
           {/* 画像を表示 */}
           <div className="order-first">
-            <img src={heroImg} alt="" className="no-drag w-64 md:w-96" />
+            <img
+              src={heroImg}
+              alt=""
+              rel="preload"
+              className="no-drag w-64 md:w-96"
+            />
           </div>
           {/* NameとJobとMainを表示 */}
           <div className="mb-4 mt-4 lg:pr-32">
