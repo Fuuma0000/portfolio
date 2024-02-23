@@ -29,19 +29,33 @@ const ScrollToTopButton = () => {
     });
 
     // 見えるようにして、画面外から元の位置に移動させる
-    controls.start({ y: 0, visibility: 'visible' });
+    controls.start({
+      y: 0,
+      visibility: 'visible',
+    });
   };
 
   return (
     <motion.button
-      initial={{ opacity: 150, y: 0 }}
+      initial={{ y: 0 }}
       animate={controls}
-      className={`fixed bottom-4 right-4 rounded-md bg-red-500 px-4 py-2 text-white`}
+      className={`bg-icon fixed bottom-4 right-4 h-24 w-24 rounded-full px-8 py-4 `}
       onClick={() => {
         scrollToTop();
       }}
     >
-      トップにスクロール
+      <div className="flex h-full w-full items-center justify-center">
+        {/* 白い楕円 */}
+        <div
+          className="relative z-10 h-9 w-14 flex-shrink-0"
+          style={{
+            borderRadius: '50% 50% 50% 50% / 50% 50% 50% 50% ',
+            backgroundColor: 'white',
+          }}
+        ></div>
+        {/* 黒い丸 */}
+        <div className="absolute left-1/2 top-1/2 z-20 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-black"></div>
+      </div>
     </motion.button>
   );
 };

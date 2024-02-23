@@ -7,6 +7,7 @@ export default {
         primary: '#894efe',
         even: '#14141f',
         odd: '#1f1f37',
+        icon: '#894FFF',
       },
     },
   },
