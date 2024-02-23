@@ -13,15 +13,18 @@ interface ProjectProps {
   links: Link[];
 }
 
-const Project: React.FC<ProjectProps> = ({
+const Project: React.FC<ProjectProps & { index: number }> = ({
   image,
   title,
   description,
   technologies,
   links,
+  index,
 }) => {
+  const borderClass = index % 2 === 1 ? 'border-primary' : '';
+
   return (
-    <div className="my-2 rounded-lg border p-8 shadow-lg">
+    <div className={`my-2 rounded-lg border p-8 shadow-lg ${borderClass}`}>
       <img src={image} alt={title} className="mb-4 rounded-lg" />
       <h2 className="mb-2 text-2xl font-bold text-white">{title}</h2>
       <p className="mb-4 text-white">{description}</p>
@@ -189,7 +192,7 @@ const Projects = ({ index }: { index: number }) => {
         <div className="-mx-4 flex flex-wrap justify-start">
           {projects.map((project, index) => (
             <div key={index} className="mb-8 w-full px-4 sm:w-1/2 lg:w-1/3">
-              <Project {...project} />
+              <Project {...project} index={index} />
             </div>
           ))}
         </div>
