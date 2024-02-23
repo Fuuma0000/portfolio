@@ -30,18 +30,16 @@ const ScrollToTopButton = () => {
   };
 
   return (
-    <div className="bg-red-500">
-      <motion.button
-        initial={{ opacity: 150, y: 0 }}
-        animate={controls}
-        className={`fixed bottom-4 right-4 rounded-md bg-red-500 px-4 py-2 text-white`}
-        onClick={() => {
-          scrollToTop();
-        }}
-      >
-        トップにスクロール
-      </motion.button>
-    </div>
+    <motion.button
+      initial={{ opacity: 150, y: 0 }}
+      animate={controls}
+      className={`fixed bottom-4 right-4 rounded-md bg-red-500 px-4 py-2 text-white`}
+      onClick={() => {
+        scrollToTop();
+      }}
+    >
+      トップにスクロール
+    </motion.button>
   );
 };
 
