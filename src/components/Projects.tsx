@@ -35,8 +35,8 @@ const Project: React.FC<ProjectProps> = ({
       </div>
 
       <div className="mb-4">
-        <strong>Links:</strong>
-        <ul className="list-disc pl-4">
+        <strong className="text-white">Links:</strong>
+        <ul className="list-none pl-4">
           {links.map((link: Link, index: number) => (
             <li key={index}>
               <a
