@@ -3,12 +3,9 @@ import '@/styles.css';
 
 const Profile = ({ index }: { index: number }) => {
   return (
-    <div
-      className={`bg-${index % 2 === 0 ? 'even' : 'odd'}  md:h-screen `}
-      id="profile"
-    >
+    <div className={`bg-${index % 2 === 0 ? 'even' : 'odd'} `} id="profile">
       {/* 真ん中に大きく表示する */}
-      <div className="mx-auto flex h-full max-w-7xl flex-col  justify-center pt-8 md:pt-0">
+      <div className="mx-auto flex h-screen max-w-7xl  flex-col justify-center pt-8 md:pt-0">
         <h1 className="relative pb-8 text-center text-3xl font-semibold text-primary ">
           Profile
         </h1>
