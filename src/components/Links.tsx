@@ -1,6 +1,9 @@
 import githubImg from '@/assets/github.png';
 import qiitaImg from '@/assets/qiita.png';
 import twitterImg from '@/assets/twitter.png';
+import connpassImg from '@/assets/connpass.png';
+import atcoderImg from '@/assets/atcoder.png';
+import growiImg from '@/assets/growi.png';
 
 const Links = ({ index }: { index: number }) => {
   // Array to manage link data
@@ -20,6 +23,21 @@ const Links = ({ index }: { index: number }) => {
       src: twitterImg,
       text: 'Twitter',
     },
+    {
+      href: 'https://connpass.com/user/Fuuma_4/',
+      src: connpassImg,
+      text: 'connpass',
+    },
+    {
+      href: 'https://atcoder.jp/users/Fuuma_8',
+      src: atcoderImg,
+      text: 'AtCoder',
+    },
+    {
+      href: 'https://growi.fuuma.net/',
+      src: growiImg,
+      text: 'Growi',
+    },
   ];
 
   return (
@@ -37,6 +55,7 @@ const Links = ({ index }: { index: number }) => {
               <li key={index}>
                 <a
                   href={link.href}
+                  target="_blank"
                   className="flex cursor-pointer flex-col items-center"
                 >
                   <img
