@@ -1,7 +1,7 @@
-import kisyoutenketuImg from '@/assets/kisyoutenketu.webp';
-import koteAlertImg from '@/assets/kotealert.webp';
-import portfolioImg from '@/assets/portfolio.webp';
-import ePlusPlusImg from '@/assets/e-plus-plus.webp';
+import kisyoutenketuImg from '@/assets/projects/kisyoutenketu.webp';
+import koteAlertImg from '@/assets/projects/kotealert.webp';
+import portfolioImg from '@/assets/projects/portfolio.webp';
+import ePlusPlusImg from '@/assets/projects/e-plus-plus.webp';
 
 interface Link {
   url: string;
