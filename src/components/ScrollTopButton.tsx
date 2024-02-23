@@ -39,8 +39,8 @@ const ScrollToTopButton = () => {
 
     // ボタンを上に移動させるアニメーション
     await controls.start({
-      y: -1980, // 画面下端よりも上に位置する
-      transition: { duration: 2 },
+      y: -1000, // 画面下端よりも上に位置する
+      transition: { duration: 1 },
     });
 
     // アニメーションが完了したら非表示にし、画面の下側に移動させる
