@@ -5,6 +5,7 @@ import About from '@/components/About';
 import Links from '@/components/Links';
 import Profile from '@/components/Profile';
 import Footer from '@/components/Footer';
+import ScrollToTopButton from '@/components/ScrollTopButton';
 
 const App = () => {
   const components = [Header, Profile, About, Links, Projects, Footer];
@@ -14,6 +15,7 @@ const App = () => {
       {components.map((Component, index: number) => (
         <Component key={index} index={index} />
       ))}
+      <ScrollToTopButton />
     </div>
   );
 };
