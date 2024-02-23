@@ -64,6 +64,7 @@ const ScrollToTopButton = () => {
       onClick={() => {
         scrollToTop();
       }}
+      aria-label="トップへスクロール"
     >
       <div className="flex h-full w-full items-center justify-center">
         {/* 白い楕円 */}
