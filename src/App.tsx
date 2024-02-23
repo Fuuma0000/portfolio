@@ -1,10 +1,10 @@
 // App.js
 import Header from '@/components/Header';
-import About from '@/components/About';
 import Projects from '@/components/Projects';
-import Footer from '@/components/Footer';
-import Profile from './components/Profile';
+import About from '@/components/About';
 import Links from './components/Links';
+import Profile from './components/Profile';
+import Footer from './components/Footer';
 
 const App = () => {
   const components = [Header, Profile, About, Links, Projects, Footer];
