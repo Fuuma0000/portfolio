@@ -11,8 +11,6 @@ const Header = ({ index }: { index: number }) => {
 
   let [open, setOpen] = useState(false);
 
-  console.log(index);
-
   return (
     <div className={`bg-${index % 2 === 0 ? 'even' : 'odd'} w-full `}>
       <div className=" mx-auto max-w-7xl">
