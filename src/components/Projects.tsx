@@ -21,7 +21,7 @@ const Project: React.FC<ProjectProps> = ({
   links,
 }) => {
   return (
-    <div className="my-8 rounded-lg border p-8 shadow-lg">
+    <div className="my-2 rounded-lg border p-8 shadow-lg">
       <img src={image} alt={title} className="mb-4 rounded-lg" />
       <h2 className="mb-2 text-2xl font-bold text-white">{title}</h2>
       <p className="mb-4 text-white">{description}</p>
@@ -34,7 +34,7 @@ const Project: React.FC<ProjectProps> = ({
         </ul>
       </div>
 
-      <div className="mb-4">
+      <div className="">
         <strong className="text-white">Links:</strong>
         <ul className="list-none pl-4">
           {links.map((link: Link, index: number) => (
