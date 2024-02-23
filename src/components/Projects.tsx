@@ -110,9 +110,10 @@ const Projects = ({ index }: { index: number }) => {
           url: 'https://github.com/Fuuma0000/e-ten',
           displayName: 'Github',
         },
+
         {
-          url: 'https://example.com/project1',
-          displayName: 'Demo',
+          url: 'https://github.com/Fuuma0000/e-ten/blob/main/docs/infra2.png',
+          displayName: 'インフラ構成図',
         },
       ],
     },
