@@ -1,4 +1,5 @@
 import kisyoutenketuImg from '../assets/kisyoutenketu.webp';
+import koteAlertImg from '../assets/kotealert.webp';
 
 interface Link {
   url: string;
@@ -65,7 +66,7 @@ const Projects = ({ index }: { index: number }) => {
       title: '起床転結RTA',
       description:
         '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
-      technologies: ['React', 'Node.js', 'Tailwind CSS'],
+      technologies: ['Flutter', 'Firebase', 'Sqlite'],
       links: [
         {
           url: 'https://github.com/Jin2003/kishoutenketsu_rta',
@@ -78,36 +79,18 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
-      image: kisyoutenketuImg,
-      title: '起床転結RTA',
-      description:
-        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
-      technologies: ['React', 'Node.js', 'Tailwind CSS'],
+      image: koteAlertImg,
+      title: 'KoteAlert',
+      description: 'はんだごての切り忘れを検知しユーザーと管理者に通知する',
+      technologies: ['Flutter', 'Node.js', 'Tailwind CSS'],
       links: [
         {
-          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
+          url: 'https://github.com/Fuuma0000/smart_handagote',
           displayName: 'Github',
         },
         {
-          url: 'https://example.com/project1',
-          displayName: 'Demo',
-        },
-      ],
-    },
-    {
-      image: kisyoutenketuImg,
-      title: '起床転結RTA',
-      description:
-        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
-      technologies: ['React', 'Node.js', 'Tailwind CSS'],
-      links: [
-        {
-          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
-          displayName: 'Github',
-        },
-        {
-          url: 'https://example.com/project1',
-          displayName: 'Demo',
+          url: 'https://protopedia.net/prototype/4905',
+          displayName: 'Prototype',
         },
       ],
     },
