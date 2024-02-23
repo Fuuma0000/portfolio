@@ -5,34 +5,34 @@ const ScrollToTopButton = () => {
   const controls = useAnimation();
 
   const scrollToTop = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    // 一旦下に少しボタンが移動する
+    await controls.start({ y: 50 });
+
     // トップにスクロール
     scroll.scrollToTop({
       duration: 500,
       smooth: 'easeInOutQuad',
     });
 
-    // アニメーションが開始されたら非表示にする
-    controls.start({ y: -1980 });
+    // ボタンを上に移動させるアニメーション
+    await controls.start({ y: -1980, transition: { duration: 2 } });
 
-    // 一定時間待機
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    controls.start({ visibility: 'hidden' });
-
-    // アニメーションが完了したら元の位置に戻し、表示する
+    // アニメーションが完了したら非表示にし、画面の下側に移動させる
     await controls.start({
       y: 100,
-      opacity: 100,
       visibility: 'hidden',
-      transition: { ease: 'easeInOut' },
     });
 
+    // 見えるようにして、画面外から元の位置に移動させる
     controls.start({ y: 0, visibility: 'visible' });
   };
 
   return (
     <div className="bg-red-500">
       <motion.button
-        initial={{ opacity: 100, y: 0 }}
+        initial={{ opacity: 150, y: 0 }}
         animate={controls}
         className={`fixed bottom-4 right-4 rounded-md bg-red-500 px-4 py-2 text-white`}
         onClick={() => {
