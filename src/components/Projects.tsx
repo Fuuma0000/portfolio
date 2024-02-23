@@ -12,6 +12,7 @@ interface ProjectProps {
   image: string;
   title: string;
   description: string;
+  duration: string;
   technologies: string[];
   links: Link[];
 }
@@ -20,6 +21,7 @@ const Project: React.FC<ProjectProps & { index: number }> = ({
   image,
   title,
   description,
+  duration,
   technologies,
   links,
   index,
@@ -31,6 +33,9 @@ const Project: React.FC<ProjectProps & { index: number }> = ({
       <img src={image} alt={title} className="mb-4 h-auto w-full rounded-lg" />
       <h2 className="mb-2 text-2xl font-bold text-white">{title}</h2>
       <p className="mb-4 text-white">{description}</p>
+      <div className="mb-4 text-white">
+        <strong>期間:</strong> {duration}
+      </div>
       <div className="mb-4 text-white">
         <strong>technologies:</strong>
         <ul className="list-disc pl-4">
@@ -68,6 +73,7 @@ const Projects = ({ index }: { index: number }) => {
       title: '起床転結RTA',
       description:
         '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
+      duration: '4月21日 〜 4月29日',
       technologies: ['Flutter', 'Firebase', 'Sqlite'],
       links: [
         {
@@ -84,6 +90,7 @@ const Projects = ({ index }: { index: number }) => {
       image: koteAlertImg,
       title: 'KoteAlert',
       description: 'はんだごての切り忘れを検知しユーザーと管理者に通知する',
+      duration: '8月7日 〜 8月25日',
       technologies: ['Flutter', 'Node.js', 'Tailwind CSS'],
       links: [
         {
@@ -104,6 +111,7 @@ const Projects = ({ index }: { index: number }) => {
       image: ePlusPlusImg,
       title: 'E++',
       description: '展示会のための企業と学生を繋ぐ作品表示アプリ',
+      duration: '10月1日 〜 2月9日',
       technologies: ['Next', 'Express', 'AWS'],
       links: [
         {
@@ -120,7 +128,8 @@ const Projects = ({ index }: { index: number }) => {
     {
       image: portfolioImg,
       title: 'ポートフォリオ',
-      description: '新しい技術を試しつつ、ポートフォリオ作りました',
+      description: '新しい技術を試しつつ、ポートフォリオ作りました。',
+      duration: '2月21日 〜 2月24日',
       technologies: ['React', 'Tailwind CSS', 'Bun', 'Vite'],
       links: [
         {
