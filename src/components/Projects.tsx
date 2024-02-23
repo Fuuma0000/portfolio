@@ -73,7 +73,7 @@ const Projects = ({ index }: { index: number }) => {
       image: kisyoutenketuImg,
       title: '起床転結RTA',
       description:
-        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
+        '技育キャンプで作成。2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
       duration: '4月21日 〜 4月29日',
       technologies: ['Flutter', 'Firebase', 'Sqlite'],
       links: [
@@ -90,7 +90,8 @@ const Projects = ({ index }: { index: number }) => {
     {
       image: koteAlertImg,
       title: 'KoteAlert',
-      description: 'はんだごての切り忘れを検知しユーザーと管理者に通知する',
+      description:
+        'HackU名古屋で作成。\nはんだごての切り忘れを検知しユーザーと管理者に通知する',
       duration: '8月7日 〜 8月25日',
       technologies: ['Flutter', 'Node.js', 'Tailwind CSS'],
       links: [
@@ -111,7 +112,8 @@ const Projects = ({ index }: { index: number }) => {
     {
       image: ePlusPlusImg,
       title: 'E++',
-      description: '展示会のための企業と学生を繋ぐ作品表示アプリ',
+      description:
+        '授業内で作成。\n展示会のための企業と学生を繋ぐ作品表示アプリ',
       duration: '10月1日 〜 2月9日',
       technologies: ['Next', 'Express', 'AWS'],
       links: [
@@ -130,7 +132,7 @@ const Projects = ({ index }: { index: number }) => {
       image: tunaGariImg,
       title: 'TunaGari',
       description:
-        'Qiitaハッカソンで作りました。\n2つの単語の繋がりから出来た画像で新しいアイデアを出す。アイデアを出し支援アプリ',
+        'Qiitaハッカソンで作成。\n2つの単語の繋がりから出来た画像で新しいアイデアを出す。アイデアを出し支援アプリ',
       duration: '2月10日 〜 2月11日',
       technologies: ['React', 'Tailwind', 'Firebase'],
       links: [
