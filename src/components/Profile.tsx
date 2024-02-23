@@ -1,4 +1,4 @@
-import heroImg from '@/assets/eye.png';
+import heroImg from '@/assets/eye.webp';
 import '@/styles.css';
 
 const Profile = ({ index }: { index: number }) => {

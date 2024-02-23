@@ -1,9 +1,9 @@
-import githubImg from '@/assets/logos/github.png';
-import qiitaImg from '@/assets/logos/qiita.png';
-import twitterImg from '@/assets/logos/twitter.png';
-import connpassImg from '@/assets/logos/connpass.png';
-import atcoderImg from '@/assets/logos/atcoder.png';
-import growiImg from '@/assets/logos/growi.png';
+import githubImg from '@/assets/logos/github.webp';
+import qiitaImg from '@/assets/logos/qiita.webp';
+import twitterImg from '@/assets/logos/twitter.webp';
+import connpassImg from '@/assets/logos/connpass.webp';
+import atcoderImg from '@/assets/logos/atcoder.webp';
+import growiImg from '@/assets/logos/growi.webp';
 
 const Links = ({ index }: { index: number }) => {
   // Array to manage link data

@@ -1,4 +1,4 @@
-import kisyoutenketuImg from '../assets/kisyoutenketu.png';
+import kisyoutenketuImg from '../assets/kisyoutenketu.webp';
 
 interface Link {
   url: string;
