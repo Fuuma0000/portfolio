@@ -2,6 +2,7 @@ import kisyoutenketuImg from '@/assets/projects/kisyoutenketu.webp';
 import koteAlertImg from '@/assets/projects/kotealert.webp';
 import portfolioImg from '@/assets/projects/portfolio.webp';
 import ePlusPlusImg from '@/assets/projects/e-plus-plus.webp';
+import tunaGariImg from '@/assets/projects/tunagari.webp';
 
 interface Link {
   url: string;
@@ -122,6 +123,20 @@ const Projects = ({ index }: { index: number }) => {
         {
           url: 'https://github.com/Fuuma0000/e-ten/blob/main/docs/infra2.png',
           displayName: 'インフラ構成図',
+        },
+      ],
+    },
+    {
+      image: tunaGariImg,
+      title: 'TunaGari',
+      description:
+        'Qiitaハッカソンで作りました。\n2つの単語の繋がりから出来た画像で新しいアイデアを出す。アイデアを出し支援アプリ',
+      duration: '2月10日 〜 2月11日',
+      technologies: ['React', 'Tailwind', 'Firebase'],
+      links: [
+        {
+          url: 'https://www.canva.com/design/DAF8dLcZ3Tk/17gs2jMhqitEm00o3vwF7Q/view?utm_content=DAF8dLcZ3Tk&utm_campaign=designshare&utm_medium=link&utm_source=editor',
+          displayName: 'Canva',
         },
       ],
     },
