@@ -6,6 +6,7 @@ const Header = ({ index }: { index: number }) => {
   let Links = [
     { name: 'Profile', link: 'profile' },
     { name: 'About', link: 'about' },
+    { name: 'Links', link: 'links' },
     { name: 'Projects', link: 'projects' },
   ];
 
