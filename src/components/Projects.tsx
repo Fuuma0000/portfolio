@@ -182,7 +182,9 @@ const Projects = ({ index }: { index: number }) => {
   return (
     <div className={`bg-${index % 2 === 0 ? 'even' : 'odd'}`} id="profile">
       <div className="mx-auto h-full max-w-7xl p-8">
-        <h1 className="mb-8 text-4xl font-semibold">My Projects</h1>
+        <h1 className="mb-8 text-center text-3xl font-semibold text-primary">
+          Projects
+        </h1>
 
         {/* プロジェクトを3つずつ横に表示 */}
         <div className="-mx-4 flex flex-wrap justify-center">
