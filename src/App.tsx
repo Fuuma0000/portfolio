@@ -6,9 +6,10 @@ import Links from '@/components/Links';
 import Profile from '@/components/Profile';
 import Footer from '@/components/Footer';
 import ScrollToTopButton from '@/components/ScrollTopButton';
+import Test from '@/components/Test';
 
 const App = () => {
-  const components = [Header, Profile, About, Links, Projects, Footer];
+  const components = [Header, Profile, About, Links, Projects, Footer, Test];
 
   return (
     <div className="mx-auto">
