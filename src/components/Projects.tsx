@@ -75,8 +75,8 @@ const Projects = ({ index }: { index: number }) => {
           displayName: 'Github',
         },
         {
-          url: 'https://example.com/project1',
-          displayName: 'Demo',
+          url: 'https://youtu.be/0Cw5oNwYR0c?t=6757',
+          displayName: 'Youtube',
         },
       ],
     },
@@ -93,6 +93,10 @@ const Projects = ({ index }: { index: number }) => {
         {
           url: 'https://protopedia.net/prototype/4905',
           displayName: 'Protopedia(詳細情報)',
+        },
+        {
+          url: 'https://youtu.be/uI0KZHE8qAg?t=2301',
+          displayName: 'Youtube',
         },
       ],
     },
