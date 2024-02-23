@@ -13,6 +13,7 @@
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "@types/react-scroll": "^1.8.10",
+    "@types/three": "^0.161.2",
     "autoprefixer": "^10.4.17",
     "framer-motion": "^11.0.6",
     "postcss": "^8.4.35",
@@ -22,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-scroll": "^1.9.0",
     "tailwindcss": "^3.4.1",
+    "three": "^0.161.0",
     "vite-tsconfig-paths": "^4.3.1"
   },
   "devDependencies": {
