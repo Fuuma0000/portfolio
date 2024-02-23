@@ -16,18 +16,18 @@ const Profile = ({ index }: { index: number }) => {
             <img src={heroImg} alt="" className="no-drag w-64 md:w-96" />
           </div>
           {/* NameとJobとMainを表示 */}
-          <div className="mb-4 lg:pr-32">
+          <div className="mb-4 mt-4 lg:pr-32">
             <table className="w-full">
               <tbody>
-                <tr className="mb-4 flex flex-col items-center md:mb-16">
+                <tr className="mb-6 flex flex-col items-center md:mb-16">
                   <td className="text-sm text-white md:text-base">Name</td>
                   <td className="text-lg text-white md:text-2xl">Fuuma</td>
                 </tr>
-                <tr className="mb-4 flex flex-col items-center md:mb-16">
+                <tr className="mb-6 flex flex-col items-center md:mb-16">
                   <td className="text-sm text-white md:text-base">Job</td>
                   <td className="text-lg text-white md:text-2xl">学生(26卒)</td>
                 </tr>
-                <tr className="mb-4 flex flex-col items-center md:mb-16">
+                <tr className="mb-6 flex flex-col items-center md:mb-16">
                   <td className="text-sm text-white md:text-base">AboutMe</td>
                   <td className="max-w-[300px] text-lg text-white md:max-w-[400px] md:text-2xl">
                     よろしくお願いします。よろしくお願いします。よろしくお願いします。
