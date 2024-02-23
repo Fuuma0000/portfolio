@@ -7,6 +7,7 @@ import Profile from '@/components/Profile';
 import Footer from '@/components/Footer';
 import ScrollToTopButton from '@/components/ScrollTopButton';
 import Test from '@/components/Test';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const App = () => {
   const components = [Header, Profile, About, Links, Projects, Footer, Test];
@@ -17,6 +18,7 @@ const App = () => {
         <Component key={index} index={index} />
       ))}
       <ScrollToTopButton />
+      <SpeedInsights />
     </div>
   );
 };
