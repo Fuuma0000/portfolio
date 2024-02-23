@@ -1,6 +1,7 @@
 import kisyoutenketuImg from '../assets/kisyoutenketu.webp';
 import koteAlertImg from '../assets/kotealert.webp';
 import portfolioImg from '../assets/portfolio.webp';
+import ePlusPlusImg from '../assets/e-plus-plus.webp';
 
 interface Link {
   url: string;
@@ -96,61 +97,26 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
+      image: ePlusPlusImg,
+      title: 'E++',
+      description: '展示会のための企業と学生を繋ぐ作品表示アプリ',
+      technologies: ['Next', 'Express', 'AWS'],
+      links: [
+        {
+          url: 'https://github.com/Fuuma0000/e-ten',
+          displayName: 'Github',
+        },
+        {
+          url: 'https://example.com/project1',
+          displayName: 'Demo',
+        },
+      ],
+    },
+    {
       image: portfolioImg,
       title: 'ポートフォリオ',
       description: '新しい技術を試しつつ、ポートフォリオ作りました',
       technologies: ['React', 'Tailwind CSS', 'Bun', 'Vite'],
-      links: [
-        {
-          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
-          displayName: 'Github',
-        },
-        {
-          url: 'https://example.com/project1',
-          displayName: 'Demo',
-        },
-      ],
-    },
-    {
-      image: kisyoutenketuImg,
-      title: '起床転結RTA',
-      description:
-        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
-      technologies: ['React', 'Node.js', 'Tailwind CSS'],
-      links: [
-        {
-          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
-          displayName: 'Github',
-        },
-        {
-          url: 'https://example.com/project1',
-          displayName: 'Demo',
-        },
-      ],
-    },
-    {
-      image: kisyoutenketuImg,
-      title: '起床転結RTA',
-      description:
-        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
-      technologies: ['React', 'Node.js', 'Tailwind CSS'],
-      links: [
-        {
-          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
-          displayName: 'Github',
-        },
-        {
-          url: 'https://example.com/project1',
-          displayName: 'Demo',
-        },
-      ],
-    },
-    {
-      image: kisyoutenketuImg,
-      title: '起床転結RTA',
-      description:
-        '2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
-      technologies: ['React', 'Node.js', 'Tailwind CSS'],
       links: [
         {
           url: 'https://github.com/Jin2003/kishoutenketsu_rta',
