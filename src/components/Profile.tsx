@@ -29,7 +29,7 @@ const Profile = ({ index }: { index: number }) => {
                 </tr>
                 <tr className="mb-4 flex flex-col items-center md:mb-16">
                   <td className="text-sm text-white md:text-base">AboutMe</td>
-                  <td className="max-w-[400px] text-lg text-white md:text-2xl">
+                  <td className="max-w-[300px] text-lg text-white md:max-w-[400px] md:text-2xl">
                     よろしくお願いします。よろしくお願いします。よろしくお願いします。
                   </td>
                 </tr>
