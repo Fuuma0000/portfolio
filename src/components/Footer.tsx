@@ -1,9 +1,3 @@
-// const Footer = () => {
-//   return <div>Footer</div>;
-// };
-
-// export default Footer;
-
 const Footer = ({ index }: { index: number }) => {
   return (
     <div className={`bg-${index % 2 === 0 ? 'even' : 'odd'} `} id="footer">
