@@ -60,7 +60,7 @@ const ScrollToTopButton = () => {
     <motion.button
       initial={{ y: 0 }}
       animate={controls}
-      className={`bg-icon fixed bottom-4 right-4 h-24 w-24 rounded-full px-8 py-4 `}
+      className={`bg-icon fixed bottom-4 right-4  h-20 w-20 rounded-full px-6 md:h-24 md:w-24 md:px-8 md:py-4 `}
       onClick={() => {
         scrollToTop();
       }}
@@ -69,7 +69,7 @@ const ScrollToTopButton = () => {
       <div className="flex h-full w-full items-center justify-center">
         {/* 白い楕円 */}
         <div
-          className="relative z-10 h-9 w-14 flex-shrink-0 overflow-hidden"
+          className="relative z-10 h-7 w-12 flex-shrink-0 overflow-hidden md:h-9 md:w-14"
           style={{
             borderRadius: '50% 50% 50% 50% / 50% 50% 50% 50%',
             backgroundColor: 'white',
@@ -77,7 +77,7 @@ const ScrollToTopButton = () => {
         ></div>
         {/* 黒い丸 */}
         <div
-          className="absolute z-20 h-5 w-5 rounded-full bg-black"
+          className="absolute z-20 h-4 w-4 rounded-full bg-black md:h-5 md:w-5"
           style={
             {
               // transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
