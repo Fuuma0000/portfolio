@@ -5,14 +5,19 @@ import connpassImg from '@/assets/logos/connpass.webp';
 import atcoderImg from '@/assets/logos/atcoder.webp';
 import growiImg from '@/assets/logos/growi.webp';
 import mailImg from '@/assets/logos/mail.webp';
+import { toast } from 'react-toastify';
 
 const Links = ({ index }: { index: number }) => {
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
-      alert('メールアドレスをコピーしました');
+      toast.success('メールアドレスをコピーしました', {
+        position: 'top-center', // Correct property name
+      });
     } catch (err) {
-      alert('コピーに失敗しました');
+      toast.error('コピーに失敗しました', {
+        position: 'top-center', // Correct property name
+      });
     }
   };
   // Array to manage link data
