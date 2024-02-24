@@ -170,7 +170,7 @@ const Projects = ({ index }: { index: number }) => {
         },
         {
           url: 'https://portfolio.fuuma.net/404',
-          displayName: '404ページ',
+          displayName: '404ページ(Vercelにデプロイしたら何故か動かないなう)',
         },
       ],
     },
