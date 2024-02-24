@@ -69,7 +69,7 @@ const ScrollToTopButton = () => {
       <div className="flex h-full w-full items-center justify-center">
         {/* 白い楕円 */}
         <div
-          className="relative z-10 h-7 w-12 flex-shrink-0 overflow-hidden md:h-9 md:w-14"
+          className="relative z-10 h-7 w-12 flex-shrink-0 overflow-hidden md:h-9 md:w-16"
           style={{
             borderRadius: '50% 50% 50% 50% / 50% 50% 50% 50%',
             backgroundColor: 'white',
