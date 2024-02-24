@@ -168,6 +168,10 @@ const Projects = ({ index }: { index: number }) => {
           url: 'https://github.com/Fuuma0000/portfolio',
           displayName: 'Github',
         },
+        {
+          url: 'https://portfolio.fuuma.net/404',
+          displayName: '404ページ',
+        },
       ],
     },
   ];
