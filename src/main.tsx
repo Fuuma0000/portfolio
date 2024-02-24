@@ -4,6 +4,7 @@ import App from './App.tsx';
 import './index.css';
 import { Bounce, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       transition={Bounce}
     />
     <App />
+    <SpeedInsights />
     <ToastContainer />
   </React.StrictMode>,
 );
