@@ -3,6 +3,7 @@ import koteAlertImg from '@/assets/projects/kotealert.webp';
 import portfolioImg from '@/assets/projects/portfolio.webp';
 import ePlusPlusImg from '@/assets/projects/e-plus-plus.webp';
 import tunaGariImg from '@/assets/projects/tunagari.webp';
+import shakeNekoMemeImg from '@/assets/projects/shake-neko-meme.webp';
 
 interface Link {
   url: string;
@@ -139,6 +140,20 @@ const Projects = ({ index }: { index: number }) => {
         {
           url: 'https://www.canva.com/design/DAF8dLcZ3Tk/17gs2jMhqitEm00o3vwF7Q/view?utm_content=DAF8dLcZ3Tk&utm_campaign=designshare&utm_medium=link&utm_source=editor',
           displayName: 'Canva',
+        },
+      ],
+    },
+    {
+      image: shakeNekoMemeImg,
+      title: 'ShakeNekoMeme',
+      description:
+        '授業のIoTハッカソンで作成。\n首に付けたM5StickCの加速度を取り、首が振られる時に猫ミームの音楽を再生するのを作りたかった。しかし、M5StickCでは音楽が流せなかったため、スマホで代替',
+      duration: '2月20日 〜 2月20日',
+      technologies: ['Flutter'],
+      links: [
+        {
+          url: 'https://github.com/Fuuma0000/ShakeNekoMeme',
+          displayName: 'Github',
         },
       ],
     },
