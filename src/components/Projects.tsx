@@ -150,7 +150,7 @@ const Projects = ({ index }: { index: number }) => {
       technologies: ['React', 'Tailwind CSS', 'Bun', 'Vite'],
       links: [
         {
-          url: 'https://github.com/Jin2003/kishoutenketsu_rta',
+          url: 'https://github.com/Fuuma0000/portfolio',
           displayName: 'Github',
         },
       ],

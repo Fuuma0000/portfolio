@@ -19,7 +19,7 @@ const Links = ({ index }: { index: number }) => {
       text: 'Qiita',
     },
     {
-      href: 'https://github.com/Fuuma0000',
+      href: 'https://twitter.com/Fuum_a',
       src: twitterImg,
       text: 'Twitter',
     },
