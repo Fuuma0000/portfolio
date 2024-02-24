@@ -1,5 +1,5 @@
-import { Canvas } from '@react-three/fiber';
-import { useState } from 'react';
+import { Canvas, useThree } from '@react-three/fiber';
+import { useState, useEffect } from 'react';
 import { TextureLoader } from 'three';
 import eyeSvg from '@/assets/textures/eye.svg';
 
@@ -22,6 +22,17 @@ const Eye: React.FC<EyeProps> = ({ rotation }) => {
   );
 };
 
+const Scene = ({ children }: { children: React.ReactNode }) => {
+  const { gl } = useThree();
+
+  useEffect(() => {
+    // WebGLRendererにアクセスして背景色を変更
+    gl.setClearColor('black');
+  }, [gl]);
+
+  return <>{children}</>;
+};
+
 const NotFound = () => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
@@ -36,8 +47,6 @@ const NotFound = () => {
     const targetRotationX = -mouse.y * Math.PI * 0.25;
     const targetRotationY = mouse.x * Math.PI * 0.25;
 
-    console.log(targetRotationX, targetRotationY);
-
     setRotation({
       x: targetRotationX,
       y: targetRotationY,
@@ -51,8 +60,9 @@ const NotFound = () => {
         onPointerMove={handleMouseMove}
         camera={{ position: [0, 0, 5], fov: 75 }}
       >
-        <ambientLight intensity={0.5} />
-        <Eye rotation={rotation} />
+        <Scene>
+          <Eye rotation={rotation} />
+        </Scene>
       </Canvas>
     </div>
   );
