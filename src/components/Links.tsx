@@ -4,8 +4,17 @@ import twitterImg from '@/assets/logos/twitter.webp';
 import connpassImg from '@/assets/logos/connpass.webp';
 import atcoderImg from '@/assets/logos/atcoder.webp';
 import growiImg from '@/assets/logos/growi.webp';
+import mailImg from '@/assets/logos/mail.webp';
 
 const Links = ({ index }: { index: number }) => {
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert('メールアドレスをコピーしました');
+    } catch (err) {
+      alert('コピーに失敗しました');
+    }
+  };
   // Array to manage link data
   const linkData = [
     {
@@ -66,6 +75,25 @@ const Links = ({ index }: { index: number }) => {
               </span>
             </a>
           ))}
+          {/* メールのみ別で実装 */}
+          <a
+            key={index}
+            // href={}
+            target="_blank"
+            className="mx-2 mb-4 flex flex-col items-center"
+            onClick={() => {
+              copyToClipboard('masa81hiro69@gmail.com');
+            }}
+          >
+            <img
+              src={mailImg}
+              alt=""
+              className="h-[60px] w-[60px] rounded-full md:h-[80px] md:w-[80px]"
+            />
+            <span className="mt-2 text-xs text-white opacity-60 md:text-sm">
+              Mail
+            </span>
+          </a>
         </div>
       </div>
     </div>
