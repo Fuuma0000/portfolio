@@ -31,7 +31,9 @@ const App = () => {
           </div>
         }
       />
-      <Route path="*" element={<NotFound />}></Route>
+      <Route path="*">
+        <NotFound />
+      </Route>
     </Routes>
   );
 };
