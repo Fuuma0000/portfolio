@@ -11,13 +11,9 @@ const Links = ({ index }: { index: number }) => {
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
-      toast.success('メールアドレスをコピーしました', {
-        position: 'top-center', // Correct property name
-      });
+      toast.success('メールアドレスをコピーしました', {});
     } catch (err) {
-      toast.error('コピーに失敗しました', {
-        position: 'top-center', // Correct property name
-      });
+      toast.error('コピーに失敗しました', {});
     }
   };
   // Array to manage link data
