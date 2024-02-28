@@ -7,9 +7,9 @@ const About = ({ index }: { index: number }) => {
           About
         </h1>
         {/* レスポンシブ用のdiv */}
-        <div className="mt-8 flex items-center justify-center text-white">
+        <div className="mt-8 flex items-center justify-center">
           {/* 自己紹介 */}
-          <p className="max-w-[300px] text-base md:max-w-[600px]">
+          <p className="max-w-[300px] text-base text-white md:max-w-[600px]">
             2022年にECCコンピュータ専門学校に入学し、プログラミングを学び始めました。
             <br />
             インフラエンジニアを志望しているのですが、フロント・バック・モバイルなども触っています。
