@@ -1,9 +1,16 @@
 import heroImg from '@/assets/eye.webp';
 import '@/styles.css';
+import { useRecoilState } from 'recoil';
+import { isDarkModeState } from '@/state/isDarkModeState';
 
 const Profile = ({ index }: { index: number }) => {
+  const [isDarkMode] = useRecoilState(isDarkModeState);
+
   return (
-    <div className={`bg-${index % 2 === 0 ? 'even' : 'odd'} `} id="profile">
+    <div
+      className={`bg-${isDarkMode ? '' : 'dark-'}${index % 2 === 0 ? 'even' : 'odd'}`}
+      id="profile"
+    >
       {/* 真ん中に大きく表示する */}
       <div className="mx-auto flex h-screen max-w-7xl  flex-col justify-center pt-8 md:pt-0">
         <h1 className="pb-8 text-center text-3xl font-semibold text-primary ">
@@ -25,16 +32,38 @@ const Profile = ({ index }: { index: number }) => {
             <table className="w-full">
               <tbody>
                 <tr className="mb-6 flex flex-col items-center md:mb-16">
-                  <td className="text-sm text-white md:text-base">Name</td>
-                  <td className="text-lg text-white md:text-2xl">Fuuma</td>
+                  <td
+                    className={`text-sm md:text-base ${isDarkMode ? 'text-white' : 'text-black'}`}
+                  >
+                    Name
+                  </td>
+                  <td
+                    className={`text-lg md:text-2xl ${isDarkMode ? 'text-white' : 'text-black'}`}
+                  >
+                    Fuuma
+                  </td>
                 </tr>
                 <tr className="mb-6 flex flex-col items-center md:mb-16">
-                  <td className="text-sm text-white md:text-base">Job</td>
-                  <td className="text-lg text-white md:text-2xl">学生(26卒)</td>
+                  <td
+                    className={`md:text-base" text-sm ${isDarkMode ? 'text-white' : 'text-black'}`}
+                  >
+                    Job
+                  </td>
+                  <td
+                    className={`text-lg md:text-2xl ${isDarkMode ? 'text-white' : 'text-black'}`}
+                  >
+                    学生(26卒)
+                  </td>
                 </tr>
                 <tr className="mb-6 flex flex-col items-center md:mb-16">
-                  <td className="text-sm text-white md:text-base">AboutMe</td>
-                  <td className="max-w-[300px] text-lg text-white md:max-w-[400px] md:text-2xl">
+                  <td
+                    className={`text-sm md:text-base ${isDarkMode ? 'text-white' : 'text-black'}`}
+                  >
+                    AboutMe
+                  </td>
+                  <td
+                    className={`max-w-[300px] text-lg md:max-w-[400px] md:text-2xl ${isDarkMode ? 'text-white' : 'text-black'}`}
+                  >
                     よろしくお願いします。
                   </td>
                 </tr>
