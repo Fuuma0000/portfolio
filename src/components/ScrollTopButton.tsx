@@ -60,7 +60,7 @@ const ScrollToTopButton = () => {
     <motion.button
       initial={{ y: 0 }}
       animate={controls}
-      className={`bg-icon fixed bottom-4 right-4  h-20 w-20 rounded-full px-6 md:h-24 md:w-24 md:px-8 md:py-4 `}
+      className={`fixed bottom-4 right-4 h-20  w-20 rounded-full bg-icon px-6 md:h-24 md:w-24 md:px-8 md:py-4 `}
       onClick={() => {
         scrollToTop();
       }}
