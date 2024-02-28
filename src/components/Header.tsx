@@ -50,10 +50,9 @@ const Header = ({ index }: { index: number }) => {
 
           <div className="flex flex-row">
             <div
-              className={`absolute right-20 top-6 font-semibold md:static md:right-0 md:my-0 md:ml-8 ${isDarkMode ? 'text-white' : 'text-black'}`}
+              className={`absolute right-20 top-6 font-semibold md:static md:right-0 md:flex md:justify-center ${isDarkMode ? 'text-white' : 'text-black'}`}
             >
               <button onClick={toggleDarkMode}>
-                <img src="" alt="" />
                 {isDarkMode ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
