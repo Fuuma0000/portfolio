@@ -197,7 +197,7 @@ const Projects = ({ index }: { index: number }) => {
 
   return (
     <div
-      className={`bg-${isDarkMode ? '' : 'dark-'}${index % 2 === 0 ? 'even' : 'odd'}`}
+      className={`bg-${isDarkMode ? 'dark-' : ''}${index % 2 === 0 ? 'even' : 'odd'}`}
       id="projects"
     >
       <div className="mx-auto h-full max-w-7xl p-8">

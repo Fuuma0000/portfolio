@@ -6,7 +6,7 @@ const Footer = ({ index }: { index: number }) => {
 
   return (
     <div
-      className={`bg-${isDarkMode ? '' : 'dark-'}${index % 2 === 0 ? 'even' : 'odd'}`}
+      className={`bg-${isDarkMode ? 'dark-' : ''}${index % 2 === 0 ? 'even' : 'odd'}`}
       id="footer"
     >
       <footer className="mx-auto max-w-7xl py-1">

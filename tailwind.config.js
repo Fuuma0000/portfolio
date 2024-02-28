@@ -5,11 +5,11 @@ export default {
     extend: {
       colors: {
         primary: '#894efe',
-        even: '#14141f',
-        odd: '#1f1f37',
+        even: '#D0F5FD',
+        odd: '#f9f9f9',
         icon: '#894FFF',
-        'dark-even': '#D0F5FD',
-        'dark-odd': '#f9f9f9',
+        'dark-even': '#14141f',
+        'dark-odd': '#1f1f37',
       },
     },
   },
