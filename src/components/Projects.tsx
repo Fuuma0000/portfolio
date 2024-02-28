@@ -4,6 +4,8 @@ import portfolioImg from '@/assets/projects/portfolio.webp';
 import ePlusPlusImg from '@/assets/projects/e-plus-plus.webp';
 import tunaGariImg from '@/assets/projects/tunagari.webp';
 import shakeNekoMemeImg from '@/assets/projects/shake-neko-meme.webp';
+import { useRecoilState } from 'recoil';
+import { isDarkModeState } from '@/state/isDarkModeState';
 
 interface Link {
   url: string;
@@ -19,7 +21,9 @@ interface ProjectProps {
   links: Link[];
 }
 
-const Project: React.FC<ProjectProps & { index: number }> = ({
+const Project: React.FC<
+  ProjectProps & { index: number; isDarkMode: boolean }
+> = ({
   image,
   title,
   description,
@@ -27,18 +31,30 @@ const Project: React.FC<ProjectProps & { index: number }> = ({
   technologies,
   links,
   index,
+  isDarkMode,
 }) => {
-  const borderClass = index % 2 === 1 ? 'border-primary' : '';
+  const borderClass =
+    index % 2 === 1
+      ? 'border-primary'
+      : isDarkMode
+        ? 'border-white'
+        : 'border-black';
 
   return (
     <div className={`my-2 rounded-lg border p-8 shadow-lg ${borderClass}`}>
       <img src={image} alt={title} className="mb-4 h-auto w-full rounded-lg" />
-      <h2 className="mb-2 text-2xl font-bold text-white">{title}</h2>
-      <p className="mb-4 text-white">{description}</p>
-      <div className="mb-4 text-white">
+      <h2
+        className={`mb-2 text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}
+      >
+        {title}
+      </h2>
+      <p className={`mb-4 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+        {description}
+      </p>
+      <div className={`mb-4 ${isDarkMode ? 'text-white' : 'text-black'}`}>
         <strong>期間:</strong> {duration}
       </div>
-      <div className="mb-4 text-white">
+      <div className={`mb-4 ${isDarkMode ? 'text-white' : 'text-black'}`}>
         <strong>technologies:</strong>
         <ul className="list-disc pl-4">
           {technologies.map((tech: string, index: number) => (
@@ -68,7 +84,7 @@ const Project: React.FC<ProjectProps & { index: number }> = ({
 };
 
 const Projects = ({ index }: { index: number }) => {
-  // Sample project data
+  const [isDarkMode] = useRecoilState(isDarkModeState);
   const projects: ProjectProps[] = [
     {
       image: kisyoutenketuImg,
@@ -177,7 +193,10 @@ const Projects = ({ index }: { index: number }) => {
   ];
 
   return (
-    <div className={`bg-${index % 2 === 0 ? 'even' : 'odd'}`} id="projects">
+    <div
+      className={`bg-${isDarkMode ? '' : 'dark-'}${index % 2 === 0 ? 'even' : 'odd'}`}
+      id="projects"
+    >
       <div className="mx-auto h-full max-w-7xl p-8">
         <h1 className="mb-8 text-center text-3xl font-semibold text-primary">
           Projects
@@ -187,7 +206,7 @@ const Projects = ({ index }: { index: number }) => {
         <div className="-mx-4 flex flex-wrap justify-start">
           {projects.map((project, index) => (
             <div key={index} className="mb-8 w-full px-4 sm:w-1/2 lg:w-1/3">
-              <Project {...project} index={index} />
+              <Project {...project} index={index} isDarkMode={isDarkMode} />
             </div>
           ))}
         </div>

@@ -1,6 +1,8 @@
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-scroll';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
+import { isDarkModeState } from '@/state/isDarkModeState';
 
 const Header = ({ index }: { index: number }) => {
   let Links = [
@@ -11,20 +13,45 @@ const Header = ({ index }: { index: number }) => {
   ];
 
   let [open, setOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useRecoilState(isDarkModeState);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+    localStorage.setItem('isDarkMode', String(!isDarkMode));
+  };
+
+  // 初回レンダリング時にlocalStorageの値を読み込み、Recoilの状態を初期化する
+  useEffect(() => {
+    const storedValue = localStorage.getItem('isDarkMode');
+    console.log(storedValue);
+    if (storedValue !== null) {
+      setIsDarkMode(storedValue === 'true' ? true : false);
+    } else {
+      console.log('set');
+      console.log(isDarkMode);
+      localStorage.setItem('isDarkMode', isDarkMode.toString());
+    }
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle('dark', isDarkMode);
+  }, [isDarkMode]);
 
   return (
-    <div className={`bg-${index % 2 === 0 ? 'even' : 'odd'} w-full `}>
+    <div
+      className={`bg-${isDarkMode ? '' : 'dark-'}${index % 2 === 0 ? 'even' : 'odd'} w-full`}
+    >
       <div className=" mx-auto max-w-7xl">
         <div className="items-center justify-between px-7 py-4 md:flex md:px-10">
           {/* サイトのロゴ */}
           <div className="flex cursor-pointer text-2xl font-bold">
-            <span className=" text-primary hover:text-white">Fuuma.net</span>
+            <span className={`hover:text-white" text-primary `}>Fuuma.net</span>
           </div>
 
           {/* モバイルの時のハンバーガー */}
           <div
             onClick={() => setOpen(!open)}
-            className="absolute right-8 top-6 h-7 w-7 cursor-pointer text-white md:hidden"
+            className={`absolute right-8 top-6 h-7 w-7 cursor-pointer  md:hidden ${isDarkMode ? 'text-white' : 'text-black'}`}
           >
             {open ? <XMarkIcon /> : <Bars3BottomRightIcon />}
           </div>
@@ -45,12 +72,21 @@ const Header = ({ index }: { index: number }) => {
                   activeClass="active"
                   smooth={true}
                   spy={true}
-                  className="text-white transition-all duration-500 hover:text-primary"
+                  className={`transition-all duration-500 hover:text-primary ${
+                    isDarkMode ? 'text-white ' : 'text-black'
+                  }`}
                 >
                   {link.name}
                 </Link>
               </li>
             ))}
+            <li
+              className={`my-7 font-semibold  md:my-0 md:ml-8 ${isDarkMode ? 'text-white' : 'text-black'}`}
+            >
+              <button onClick={toggleDarkMode}>
+                {isDarkMode ? 'ライトモード' : 'ダークモード'}
+              </button>
+            </li>
           </ul>
         </div>
       </div>

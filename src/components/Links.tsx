@@ -6,8 +6,11 @@ import atcoderImg from '@/assets/logos/atcoder.webp';
 import growiImg from '@/assets/logos/growi.webp';
 import mailImg from '@/assets/logos/mail.webp';
 import { toast } from 'react-toastify';
+import { useRecoilState } from 'recoil';
+import { isDarkModeState } from '@/state/isDarkModeState';
 
 const Links = ({ index }: { index: number }) => {
+  const [isDarkMode] = useRecoilState(isDarkModeState);
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -51,7 +54,10 @@ const Links = ({ index }: { index: number }) => {
   ];
 
   return (
-    <div className={`bg-${index % 2 === 0 ? 'even' : 'odd'}`} id="links">
+    <div
+      className={`bg-${isDarkMode ? '' : 'dark-'}${index % 2 === 0 ? 'even' : 'odd'}`}
+      id="links"
+    >
       <div className="mx-auto flex h-screen max-w-7xl flex-col justify-center">
         {/* 真ん中に大きく表示する */}
         <h1 className="mb-8 text-center text-3xl font-semibold text-primary md:mb-0">
@@ -71,7 +77,9 @@ const Links = ({ index }: { index: number }) => {
                 alt=""
                 className="h-[60px] w-[60px] rounded-full md:h-[80px] md:w-[80px]"
               />
-              <span className="mt-2 text-xs text-white opacity-60 md:text-sm">
+              <span
+                className={`mt-2 text-xs opacity-60 md:text-sm ${isDarkMode ? 'text-white' : 'text-black'}`}
+              >
                 {link.text}
               </span>
             </a>
@@ -91,7 +99,9 @@ const Links = ({ index }: { index: number }) => {
               alt=""
               className="h-[60px] w-[60px] rounded-full md:h-[80px] md:w-[80px]"
             />
-            <span className="mt-2 text-xs text-white opacity-60 md:text-sm">
+            <span
+              className={`mt-2 text-xs opacity-60 md:text-sm ${isDarkMode ? 'text-white' : 'text-black'}`}
+            >
               Mail
             </span>
           </a>
