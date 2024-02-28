@@ -1,8 +1,4 @@
-import {
-  Bars3BottomRightIcon,
-  XMarkIcon,
-  MoonIcon,
-} from '@heroicons/react/24/solid';
+import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-scroll';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
