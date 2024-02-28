@@ -8,8 +8,8 @@ export default {
         even: '#14141f',
         odd: '#1f1f37',
         icon: '#894FFF',
-        'dark-even': '#f0f0f0', // ライトモードの偶数セクションの背景色
-        'dark-odd': '#ffffff', // ライトモードの奇数セクションの背景色
+        'dark-even': '#D0F5FD',
+        'dark-odd': '#ffffff',
       },
     },
   },

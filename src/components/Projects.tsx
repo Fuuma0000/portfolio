@@ -41,7 +41,9 @@ const Project: React.FC<
         : 'border-black';
 
   return (
-    <div className={`my-2 rounded-lg border p-8 shadow-lg ${borderClass}`}>
+    <div
+      className={`my-2 rounded-lg border p-8 shadow-lg ${borderClass} ${isDarkMode ? '' : 'bg-white'}`}
+    >
       <img src={image} alt={title} className="mb-4 h-auto w-full rounded-lg" />
       <h2
         className={`mb-2 text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}
