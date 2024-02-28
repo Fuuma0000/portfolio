@@ -48,46 +48,49 @@ const Header = ({ index }: { index: number }) => {
             <span className={`hover:text-white" text-primary `}>Fuuma.net</span>
           </div>
 
-          {/* モバイルの時のハンバーガー */}
-          <div
-            onClick={() => setOpen(!open)}
-            className={`absolute right-8 top-6 h-7 w-7 cursor-pointer  md:hidden ${isDarkMode ? 'text-white' : 'text-black'}`}
-          >
-            {open ? <XMarkIcon /> : <Bars3BottomRightIcon />}
-          </div>
-
-          {/* ナビゲーション*/}
-          <ul
-            className={`absolute left-0 z-10 mt-4 w-full bg-slate-400 pl-9 transition-all duration-500 ease-linear sm:bg-transparent md:static md:z-auto md:mt-0 md:flex md:w-auto md:items-center md:pb-0 md:pl-0 ${
-              open ? 'top-12' : 'top-[-490px]'
-            } `}
-          >
-            {Links.map((link) => (
-              <li
-                key={link.name}
-                className="my-7 font-semibold md:my-0 md:ml-8"
-              >
-                <Link
-                  to={link.link}
-                  activeClass="active"
-                  smooth={true}
-                  spy={true}
-                  className={`transition-all duration-500 hover:text-primary ${
-                    isDarkMode ? 'text-white ' : 'text-black'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-            <li
-              className={`my-7 font-semibold  md:my-0 md:ml-8 ${isDarkMode ? 'text-white' : 'text-black'}`}
+          <div className="flex flex-row">
+            <div
+              className={`absolute right-20 top-6  font-semibold md:static md:right-0 md:my-0 md:ml-8 ${isDarkMode ? 'text-white' : 'text-black'}`}
             >
               <button onClick={toggleDarkMode}>
                 {isDarkMode ? 'ライトモード' : 'ダークモード'}
               </button>
-            </li>
-          </ul>
+            </div>
+
+            {/* モバイルの時のハンバーガー */}
+            <div
+              onClick={() => setOpen(!open)}
+              className={`absolute right-8 top-6 h-7 w-7 cursor-pointer  md:hidden ${isDarkMode ? 'text-white' : 'text-black'}`}
+            >
+              {open ? <XMarkIcon /> : <Bars3BottomRightIcon />}
+            </div>
+
+            {/* ナビゲーション*/}
+            <ul
+              className={`absolute left-0 z-10 mt-4 w-full bg-slate-400 pl-9 transition-all duration-500 ease-linear sm:bg-transparent md:static md:z-auto md:mt-0 md:flex md:w-auto md:items-center md:pb-0 md:pl-0 ${
+                open ? 'top-12' : 'top-[-490px]'
+              } `}
+            >
+              {Links.map((link) => (
+                <li
+                  key={link.name}
+                  className="my-7 font-semibold md:my-0 md:ml-8"
+                >
+                  <Link
+                    to={link.link}
+                    activeClass="active"
+                    smooth={true}
+                    spy={true}
+                    className={`transition-all duration-500 hover:text-primary ${
+                      isDarkMode ? 'text-white ' : 'text-black'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
