@@ -1,6 +1,6 @@
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-scroll';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Header = ({ index }: { index: number }) => {
   let Links = [
@@ -11,6 +11,20 @@ const Header = ({ index }: { index: number }) => {
   ];
 
   let [open, setOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // LocalStorageから保存された状態を取得する
+    return localStorage.getItem('isDarkMode') === 'true';
+  });
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    // LocalStorageに状態を保存する
+    localStorage.setItem('isDarkMode', String(!isDarkMode));
+  };
+
+  useEffect(() => {
+    document.body.classList.toggle('dark', isDarkMode);
+  }, [isDarkMode]);
 
   return (
     <div className={`bg-${index % 2 === 0 ? 'even' : 'odd'} w-full `}>
@@ -45,12 +59,19 @@ const Header = ({ index }: { index: number }) => {
                   activeClass="active"
                   smooth={true}
                   spy={true}
-                  className="text-white transition-all duration-500 hover:text-primary"
+                  className={`text-white transition-all duration-500 hover:text-primary ${
+                    isDarkMode ? 'dark:text-black' : ''
+                  }`}
                 >
                   {link.name}
                 </Link>
               </li>
             ))}
+            <li className="my-7 font-semibold text-white md:my-0 md:ml-8">
+              <button onClick={toggleDarkMode}>
+                {isDarkMode ? 'ライトモード' : 'ダークモード'}
+              </button>
+            </li>
           </ul>
         </div>
       </div>
