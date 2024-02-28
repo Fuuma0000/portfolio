@@ -9,7 +9,7 @@ export default {
         odd: '#1f1f37',
         icon: '#894FFF',
         'dark-even': '#D0F5FD',
-        'dark-odd': '#ffffff',
+        'dark-odd': '#f9f9f9',
       },
     },
   },
