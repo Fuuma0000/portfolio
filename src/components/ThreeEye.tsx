@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { Canvas, useThree } from '@react-three/fiber';
 import { useState, useEffect } from 'react';
 import { TextureLoader } from 'three';
+import { Text } from '@react-three/drei';
 import eyeSvg from '@/assets/textures/eye.svg';
 
 interface EyeProps {
@@ -28,7 +28,6 @@ const Scene = ({ children }: { children: React.ReactNode }) => {
   const { gl } = useThree();
 
   useEffect(() => {
-    // WebGLRendererにアクセスして背景色を変更
     gl.setClearColor('black');
   }, [gl]);
 
@@ -45,7 +44,6 @@ const ThreeEye = () => {
       y: -(clientY / window.innerHeight) * 2 + 1,
     };
 
-    // マウスの位置に合わせてボールを回転させる
     const targetRotationX = -mouse.y * Math.PI * 0.25;
     const targetRotationY = mouse.x * Math.PI * 0.25;
 
@@ -54,14 +52,35 @@ const ThreeEye = () => {
       y: targetRotationY,
     });
   };
+
+  const handleCanvasClick = () => {
+    // クリックされたときの処理を追加
+    window.location.href = 'https://portfolio.fuuma.net';
+  };
+
   return (
     <Canvas
       style={{ cursor: 'grab', position: 'absolute' }}
       onPointerMove={handleMouseMove}
       camera={{ position: [0, 0, 5], fov: 75 }}
+      onClick={handleCanvasClick}
     >
       <Scene>
+        <Text position={[0, 2.5, 0]} color="white" fontSize={0.8}>
+          404
+        </Text>
+        <Text position={[0, 1.8, 0]} color="white" fontSize={0.3}>
+          Not Found
+        </Text>
         <Eye rotation={rotation} />
+        <Text
+          position={[0, -3, 0]}
+          color="white"
+          fontSize={0.2}
+          onClick={handleCanvasClick}
+        >
+          Click to go back to portfolio.fuuma.net
+        </Text>
       </Scene>
     </Canvas>
   );

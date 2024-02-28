@@ -178,7 +178,8 @@ const Projects = ({ index }: { index: number }) => {
     {
       image: portfolioImg,
       title: 'ポートフォリオ',
-      description: '新しい技術を試しつつ、ポートフォリオ作りました。',
+      description:
+        '新しい技術を試しつつ、ポートフォリオ作りました。\n右下のスクロールボタンと404ページがお気に入りです。',
       duration: '2月21日 〜 2月24日',
       technologies: ['React', 'Tailwind CSS', 'Bun', 'Vite'],
       links: [
@@ -188,7 +189,7 @@ const Projects = ({ index }: { index: number }) => {
         },
         {
           url: 'https://portfolio.fuuma.net/404',
-          displayName: '404ページ(Vercelにデプロイしたら何故か動かないなう)',
+          displayName: '404ページ',
         },
       ],
     },
