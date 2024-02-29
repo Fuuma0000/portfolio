@@ -8,7 +8,8 @@ import kisyoutenketuImg7 from '@/assets/projects/kisyoutenketu/kisyoutenketu7.we
 import kisyoutenketuImg8 from '@/assets/projects/kisyoutenketu/kisyoutenketu8.webp';
 
 import koteAlertImg from '@/assets/projects/kotealert.webp';
-import portfolioImg from '@/assets/projects/portfolio.webp';
+import portfolioImg1 from '@/assets/projects/portfolio/portfolio1.webp';
+import portfolioImg2 from '@/assets/projects/portfolio/portfolio2.webp';
 import ePlusPlusImg from '@/assets/projects/e-plus-plus.webp';
 import tunaGariImg1 from '@/assets/projects/tunagari/tunagari1.webp';
 import tunaGariImg2 from '@/assets/projects/tunagari/tunagari2.webp';
@@ -215,7 +216,7 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
-      images: [portfolioImg],
+      images: [portfolioImg1, portfolioImg2],
       title: 'ポートフォリオ',
       description:
         '新しい技術を試しつつ、ポートフォリオ作りました。\n右下のスクロールボタンと404ページがお気に入りです。',
