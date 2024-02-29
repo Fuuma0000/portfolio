@@ -5,6 +5,7 @@ import kisyoutenketuImg4 from '@/assets/projects/kisyoutenketu/kisyoutenketu4.we
 import kisyoutenketuImg5 from '@/assets/projects/kisyoutenketu/kisyoutenketu5.webp';
 import kisyoutenketuImg6 from '@/assets/projects/kisyoutenketu/kisyoutenketu6.webp';
 import kisyoutenketuImg7 from '@/assets/projects/kisyoutenketu/kisyoutenketu7.webp';
+import kisyoutenketuImg8 from '@/assets/projects/kisyoutenketu/kisyoutenketu8.webp';
 
 import koteAlertImg from '@/assets/projects/kotealert.webp';
 import portfolioImg from '@/assets/projects/portfolio.webp';
@@ -14,7 +15,8 @@ import shakeNekoMemeImg from '@/assets/projects/shake-neko-meme.webp';
 import { useRecoilState } from 'recoil';
 import { isDarkModeState } from '@/state/isDarkModeState';
 import Slider from 'react-slick';
-import SlickStyles from '../styles/SlickStyles';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 interface Link {
   url: string;
@@ -124,6 +126,7 @@ const Projects = ({ index }: { index: number }) => {
         kisyoutenketuImg5,
         kisyoutenketuImg6,
         kisyoutenketuImg7,
+        kisyoutenketuImg8,
       ],
       title: '起床点結RTA',
       description:
@@ -235,7 +238,7 @@ const Projects = ({ index }: { index: number }) => {
       className={`bg-${isDarkMode ? 'dark-' : ''}${index % 2 === 0 ? 'even' : 'odd'}`}
       id="projects"
     >
-      <SlickStyles />
+      {/* <SlickStyles /> */}
       <div className="mx-auto h-full max-w-7xl p-8">
         <h1 className="mb-8 text-center text-3xl font-semibold text-primary">
           Projects
