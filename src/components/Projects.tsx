@@ -11,6 +11,9 @@ import koteAlertImg1 from '@/assets/projects/kotealert/kotealert1.webp';
 import koteAlertImg2 from '@/assets/projects/kotealert/kotealert2.webp';
 import portfolioImg1 from '@/assets/projects/portfolio/portfolio1.webp';
 import portfolioImg2 from '@/assets/projects/portfolio/portfolio2.webp';
+import pixiv_botImg1 from '@/assets/projects/pixiv_bot/pixiv_bot1.webp';
+import pixiv_botImg2 from '@/assets/projects/pixiv_bot/pixiv_bot2.webp';
+import pixiv_botImg3 from '@/assets/projects/pixiv_bot/pixiv_bot3.webp';
 import ePlusPlusImg from '@/assets/projects/e-plus-plus.webp';
 import tunaGariImg1 from '@/assets/projects/tunagari/tunagari1.webp';
 import tunaGariImg2 from '@/assets/projects/tunagari/tunagari2.webp';
@@ -185,6 +188,24 @@ const Projects = ({ index }: { index: number }) => {
         {
           url: 'https://github.com/Fuuma0000/e-ten/blob/main/docs/infra2.png',
           displayName: 'インフラ構成図',
+        },
+      ],
+    },
+    {
+      images: [pixiv_botImg1, pixiv_botImg2, pixiv_botImg3],
+      title: 'Pixiv匿名共有Bot',
+      description:
+        'DiscordのサーバーでPixivのIDを登録すると、ブックマークで自動でBotが匿名で共有し、他の人と共有出来るBotを作成しました。\n botのステータスやユーザの使用率などの監視も初挑戦しました',
+      duration: '1月10日 〜 1月23日',
+      technologies: ['python', 'discord.py', 'sqlite', 'Grafana', 'prometheus'],
+      links: [
+        {
+          url: 'https://github.com/Fuuma0000/pixiv_bot',
+          displayName: 'Github',
+        },
+        {
+          url: 'https://grafana.fuuma.net/public-dashboards/e7355c9ab1fd4073bfe4ec2e772a63b8?orgId=1&refresh=5s&from=now%2Fd&to=now%2Fd',
+          displayName: 'Grafana',
         },
       ],
     },
