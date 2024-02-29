@@ -63,7 +63,7 @@ const Project: React.FC<
     <div
       className={`my-2 rounded-lg border p-8 shadow-lg ${borderClass} ${isDarkMode ? '' : 'bg-white'}`}
     >
-      <div className="slider-container mb-4">
+      <div className="slider-container mb-8">
         <Slider {...settings}>
           {(images.length === 1 ? [...images, ...images] : images).map(
             (image, index) => (
