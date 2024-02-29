@@ -125,7 +125,7 @@ const Projects = ({ index }: { index: number }) => {
         kisyoutenketuImg6,
         kisyoutenketuImg7,
       ],
-      title: '起床転結RTA',
+      title: '起床点結RTA',
       description:
         '技育キャンプで作成。2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
       duration: '4月21日 〜 4月29日',
