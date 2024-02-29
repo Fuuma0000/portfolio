@@ -1,4 +1,11 @@
-import kisyoutenketuImg from '@/assets/projects/kisyoutenketu.webp';
+import kisyoutenketuImg1 from '@/assets/projects/kisyoutenketu/kisyoutenketu1.webp';
+import kisyoutenketuImg2 from '@/assets/projects/kisyoutenketu/kisyoutenketu2.webp';
+import kisyoutenketuImg3 from '@/assets/projects/kisyoutenketu/kisyoutenketu3.webp';
+import kisyoutenketuImg4 from '@/assets/projects/kisyoutenketu/kisyoutenketu4.webp';
+import kisyoutenketuImg5 from '@/assets/projects/kisyoutenketu/kisyoutenketu5.webp';
+import kisyoutenketuImg6 from '@/assets/projects/kisyoutenketu/kisyoutenketu6.webp';
+import kisyoutenketuImg7 from '@/assets/projects/kisyoutenketu/kisyoutenketu7.webp';
+
 import koteAlertImg from '@/assets/projects/kotealert.webp';
 import portfolioImg from '@/assets/projects/portfolio.webp';
 import ePlusPlusImg from '@/assets/projects/e-plus-plus.webp';
@@ -15,7 +22,7 @@ interface Link {
 }
 
 interface ProjectProps {
-  image: string;
+  images: string[];
   title: string;
   description: string;
   duration: string;
@@ -26,7 +33,7 @@ interface ProjectProps {
 const Project: React.FC<
   ProjectProps & { index: number; isDarkMode: boolean }
 > = ({
-  image,
+  images,
   title,
   description,
   duration,
@@ -56,15 +63,13 @@ const Project: React.FC<
     >
       <div className="slider-container mb-4">
         <Slider {...settings}>
-          <div className="">
-            <img src={image} alt={title} className="rounded-lg" />
-          </div>
-          <div>
-            <img src={image} alt={title} className="rounded-lg" />
-          </div>
-          <div>
-            <img src={image} alt={title} className="rounded-lg" />
-          </div>
+          {(images.length === 1 ? [...images, ...images] : images).map(
+            (image, index) => (
+              <div key={index}>
+                <img src={image} alt={title} className="rounded-lg" />
+              </div>
+            ),
+          )}
         </Slider>
       </div>
       <h2
@@ -111,7 +116,15 @@ const Projects = ({ index }: { index: number }) => {
   const [isDarkMode] = useRecoilState(isDarkModeState);
   const projects: ProjectProps[] = [
     {
-      image: kisyoutenketuImg,
+      images: [
+        kisyoutenketuImg1,
+        kisyoutenketuImg2,
+        kisyoutenketuImg3,
+        kisyoutenketuImg4,
+        kisyoutenketuImg5,
+        kisyoutenketuImg6,
+        kisyoutenketuImg7,
+      ],
       title: '起床転結RTA',
       description:
         '技育キャンプで作成。2度寝をするのをNFCをタッチすることで防ぐことができるアプリです。',
@@ -129,7 +142,7 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
-      image: koteAlertImg,
+      images: [koteAlertImg],
       title: 'KoteAlert',
       description:
         'HackU名古屋で作成。\nはんだごての切り忘れを検知しユーザーと管理者に通知する',
@@ -151,7 +164,7 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
-      image: ePlusPlusImg,
+      images: [ePlusPlusImg],
       title: 'E++',
       description:
         '授業内で作成。\n展示会のための企業と学生を繋ぐ作品表示アプリ',
@@ -170,7 +183,7 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
-      image: tunaGariImg,
+      images: [tunaGariImg],
       title: 'TunaGari',
       description:
         'Qiitaハッカソンで作成。\n2つの単語の繋がりから出来た画像で新しいアイデアを出す。アイデアを出し支援アプリ',
@@ -184,7 +197,7 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
-      image: shakeNekoMemeImg,
+      images: [shakeNekoMemeImg],
       title: 'ShakeNekoMeme',
       description:
         '授業のIoTハッカソンで作成。\n首に付けたM5StickCの加速度を取り、首が振られる時に猫ミームの音楽を再生するのを作りたかった。しかし、M5StickCでは音楽が流せなかったため、スマホで代替',
@@ -198,7 +211,7 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
-      image: portfolioImg,
+      images: [portfolioImg],
       title: 'ポートフォリオ',
       description:
         '新しい技術を試しつつ、ポートフォリオ作りました。\n右下のスクロールボタンと404ページがお気に入りです。',
