@@ -10,7 +10,8 @@ import kisyoutenketuImg8 from '@/assets/projects/kisyoutenketu/kisyoutenketu8.we
 import koteAlertImg from '@/assets/projects/kotealert.webp';
 import portfolioImg from '@/assets/projects/portfolio.webp';
 import ePlusPlusImg from '@/assets/projects/e-plus-plus.webp';
-import tunaGariImg from '@/assets/projects/tunagari.webp';
+import tunaGariImg1 from '@/assets/projects/tunagari/tunagari1.webp';
+import tunaGariImg2 from '@/assets/projects/tunagari/tunagari2.webp';
 import shakeNekoMemeImg from '@/assets/projects/shake-neko-meme.webp';
 import { useRecoilState } from 'recoil';
 import { isDarkModeState } from '@/state/isDarkModeState';
@@ -186,7 +187,7 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
-      images: [tunaGariImg],
+      images: [tunaGariImg1, tunaGariImg2],
       title: 'TunaGari',
       description:
         'Qiitaハッカソンで作成。\n2つの単語の繋がりから出来た画像で新しいアイデアを出す。アイデアを出し支援アプリ',
