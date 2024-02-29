@@ -7,7 +7,8 @@ import kisyoutenketuImg6 from '@/assets/projects/kisyoutenketu/kisyoutenketu6.we
 import kisyoutenketuImg7 from '@/assets/projects/kisyoutenketu/kisyoutenketu7.webp';
 import kisyoutenketuImg8 from '@/assets/projects/kisyoutenketu/kisyoutenketu8.webp';
 
-import koteAlertImg from '@/assets/projects/kotealert.webp';
+import koteAlertImg1 from '@/assets/projects/kotealert/kotealert1.webp';
+import koteAlertImg2 from '@/assets/projects/kotealert/kotealert2.webp';
 import portfolioImg1 from '@/assets/projects/portfolio/portfolio1.webp';
 import portfolioImg2 from '@/assets/projects/portfolio/portfolio2.webp';
 import ePlusPlusImg from '@/assets/projects/e-plus-plus.webp';
@@ -147,7 +148,7 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
-      images: [koteAlertImg],
+      images: [koteAlertImg1, koteAlertImg2],
       title: 'KoteAlert',
       description:
         'HackU名古屋で作成。\nはんだごての切り忘れを検知しユーザーと管理者に通知する',
