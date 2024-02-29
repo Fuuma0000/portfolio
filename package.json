@@ -30,6 +30,7 @@
     "react-slick": "^0.30.2",
     "react-toastify": "^10.0.4",
     "recoil": "^0.7.7",
+    "slick-carousel": "^1.8.1",
     "tailwindcss": "^3.4.1",
     "three": "^0.161.0",
     "vite-tsconfig-paths": "^4.3.1"
