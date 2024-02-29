@@ -6,6 +6,8 @@ import tunaGariImg from '@/assets/projects/tunagari.webp';
 import shakeNekoMemeImg from '@/assets/projects/shake-neko-meme.webp';
 import { useRecoilState } from 'recoil';
 import { isDarkModeState } from '@/state/isDarkModeState';
+import Slider from 'react-slick';
+import SlickStyles from '../styles/SlickStyles';
 
 interface Link {
   url: string;
@@ -40,11 +42,31 @@ const Project: React.FC<
         ? 'border-white'
         : 'border-black';
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <div
       className={`my-2 rounded-lg border p-8 shadow-lg ${borderClass} ${isDarkMode ? '' : 'bg-white'}`}
     >
-      <img src={image} alt={title} className="mb-4 h-auto w-full rounded-lg" />
+      <div className="slider-container mb-4">
+        <Slider {...settings}>
+          <div className="">
+            <img src={image} alt={title} className="rounded-lg" />
+          </div>
+          <div>
+            <img src={image} alt={title} className="rounded-lg" />
+          </div>
+          <div>
+            <img src={image} alt={title} className="rounded-lg" />
+          </div>
+        </Slider>
+      </div>
       <h2
         className={`mb-2 text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}
       >
@@ -200,6 +222,7 @@ const Projects = ({ index }: { index: number }) => {
       className={`bg-${isDarkMode ? 'dark-' : ''}${index % 2 === 0 ? 'even' : 'odd'}`}
       id="projects"
     >
+      <SlickStyles />
       <div className="mx-auto h-full max-w-7xl p-8">
         <h1 className="mb-8 text-center text-3xl font-semibold text-primary">
           Projects
