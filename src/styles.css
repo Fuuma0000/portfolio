@@ -4,3 +4,7 @@
   -webkit-user-drag: none;
   -khtml-user-drag: none;
 }
+
+.slick-dots li.slick-active button:before {
+  color: #894efe;
+}
