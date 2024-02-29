@@ -232,6 +232,9 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
   ];
+  const dotsStyle = {
+    color: isDarkMode ? 'white' : '',
+  };
 
   return (
     <div
@@ -253,6 +256,11 @@ const Projects = ({ index }: { index: number }) => {
           ))}
         </div>
       </div>
+      <style>{`
+        .slick-dots li button:before {
+          color: ${dotsStyle.color};
+        }
+      `}</style>
     </div>
   );
 };
