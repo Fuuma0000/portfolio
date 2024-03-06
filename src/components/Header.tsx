@@ -23,7 +23,7 @@ const Header = ({ index }: { index: number }) => {
   // 初回レンダリング時にlocalStorageの値を読み込み、Recoilの状態を初期化する
   useEffect(() => {
     const storedValue = localStorage.getItem('isDarkMode');
-    console.log(storedValue);
+    // console.log(storedValue);
     if (storedValue !== null) {
       setIsDarkMode(storedValue === 'true' ? true : false);
     } else {
@@ -41,18 +41,21 @@ const Header = ({ index }: { index: number }) => {
     <div
       className={`bg-${isDarkMode ? 'dark-' : ''}${index % 2 === 0 ? 'even' : 'odd'} w-full`}
     >
-      <div className=" mx-auto max-w-7xl">
-        <div className="items-center justify-between px-7 py-4 md:flex md:px-10">
+      <div className="mx-auto max-w-7xl py-4 pl-7 md:px-10">
+        <div className="flex justify-between">
           {/* サイトのロゴ */}
-          <div className="flex cursor-pointer text-2xl font-bold">
+          <div className="cursor-pointer text-2xl font-bold">
             <span className={`hover:text-white" text-primary `}>Fuuma.net</span>
           </div>
 
-          <div className="flex flex-row">
+          <div className="flex flex-row items-center justify-center">
             <div
-              className={`absolute right-20 top-6 font-semibold md:static md:right-0 md:flex md:justify-center ${isDarkMode ? 'text-white' : 'text-black'}`}
+              className={`absolute right-20 top-6 flex items-center justify-center font-semibold md:static md:right-0 md:flex md:justify-center ${isDarkMode ? 'text-white' : 'text-black'}`}
             >
-              <button onClick={toggleDarkMode}>
+              <button
+                onClick={toggleDarkMode}
+                className="flex items-center justify-center"
+              >
                 {isDarkMode ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +93,7 @@ const Header = ({ index }: { index: number }) => {
             {/* モバイルの時のハンバーガー */}
             <div
               onClick={() => setOpen(!open)}
-              className={`absolute right-8 top-6 h-7 w-7 cursor-pointer  md:hidden ${isDarkMode ? 'text-white' : 'text-black'}`}
+              className={`absolute right-8 top-6  w-7 cursor-pointer  md:hidden ${isDarkMode ? 'text-white' : 'text-black'}`}
             >
               {open ? <XMarkIcon /> : <Bars3BottomRightIcon />}
             </div>
