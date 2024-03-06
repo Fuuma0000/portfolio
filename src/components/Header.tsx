@@ -48,9 +48,9 @@ const Header = ({ index }: { index: number }) => {
             <span className={`hover:text-white" text-primary `}>Fuuma.net</span>
           </div>
 
-          <div className="flex flex-row items-center justify-center">
+          <div className="md:flex md:flex-row md:items-center md:justify-center">
             <div
-              className={`absolute right-20 top-6 flex items-center justify-center font-semibold md:static md:right-0 md:flex md:justify-center ${isDarkMode ? 'text-white' : 'text-black'}`}
+              className={`absolute right-20 top-5 flex w-8 items-center justify-center font-semibold md:static md:right-0 md:flex md:justify-center ${isDarkMode ? 'text-white' : 'text-black'}`}
             >
               <button
                 onClick={toggleDarkMode}
@@ -93,7 +93,7 @@ const Header = ({ index }: { index: number }) => {
             {/* モバイルの時のハンバーガー */}
             <div
               onClick={() => setOpen(!open)}
-              className={`absolute right-8 top-6  w-7 cursor-pointer  md:hidden ${isDarkMode ? 'text-white' : 'text-black'}`}
+              className={`absolute right-8 top-4  w-8 cursor-pointer  md:hidden ${isDarkMode ? 'text-white' : 'text-black'}`}
             >
               {open ? <XMarkIcon /> : <Bars3BottomRightIcon />}
             </div>
