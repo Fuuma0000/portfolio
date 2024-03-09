@@ -11,6 +11,10 @@
     "format": "prettier . --write"
   },
   "dependencies": {
+    "@capacitor/android": "^5.7.2",
+    "@capacitor/cli": "^5.7.2",
+    "@capacitor/core": "^5.7.2",
+    "@capacitor/ios": "^5.7.2",
     "@heroicons/react": "^2.1.1",
     "@react-three/drei": "^9.99.3",
     "@react-three/fiber": "^8.15.16",
