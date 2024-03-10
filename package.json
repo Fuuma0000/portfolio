@@ -21,6 +21,7 @@
     "@types/react-scroll": "^1.8.10",
     "@types/react-slick": "^0.23.13",
     "@types/three": "^0.161.2",
+    "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "autoprefixer": "^10.4.17",
     "framer-motion": "^11.0.6",

@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
+import { Analytics } from '@vercel/analytics/react';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         />
         <App />
         <SpeedInsights />
+        <Analytics />
         <ToastContainer />
       </RecoilRoot>
     </BrowserRouter>
