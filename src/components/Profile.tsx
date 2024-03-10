@@ -62,7 +62,7 @@ const Profile = ({ index }: { index: number }) => {
                     AboutMe
                   </td>
                   <td
-                    className={`max-w-[300px] text-lg md:max-w-[400px] md:text-2xl ${isDarkMode ? 'text-white' : 'text-black'}`}
+                    className={`max-w-[300px] text-center text-lg md:max-w-[400px] md:text-2xl ${isDarkMode ? 'text-white' : 'text-black'}`}
                   >
                     よろしくお願いします。
                     <br /> (サイトの中身は書き換え途中です)
