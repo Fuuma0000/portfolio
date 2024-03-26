@@ -17,6 +17,9 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Build app
+        run: bun run build
+
       - name: run Lighthouse CI
         run: |
           bun add -g @lhci/cli@0.13.x
