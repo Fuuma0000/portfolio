@@ -1,0 +1,23 @@
+name: Build project and Run Lighthouse CI
+on:
+  push:
+    branches:
+      - main
+jobs:
+  lhci:
+    name: Lighthouse CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.13.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.13.1
+      - name: npm install, build
+        run: |
+          npm install
+          npm run build
+      - name: run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.4.x
+          lhci autorun --upload.target=temporary-public-storage --collect.staticDistDir=./src/.vuepress/dist || echo "Lighthouse CI failed!"
