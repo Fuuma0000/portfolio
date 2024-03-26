@@ -19,5 +19,5 @@ jobs:
 
       - name: run Lighthouse CI
         run: |
-          bun add @lhci/cli@0.13.0
-          lhci autorun --upload.target=temporary-public-storage --staticDistDir=./build || echo "LHCI failed!"
+          bun add @lhci/cli@0.13.x
+          lhci autorun || echo "LHCI failed!"
