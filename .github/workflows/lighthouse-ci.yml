@@ -20,7 +20,8 @@ jobs:
       - name: Build app
         run: bun run build
 
-      - name: run Lighthouse CI
-        run: |
-          bun add -g @lhci/cli@0.13.x
-          lhci autorun || echo "LHCI failed!"
+      - name: Setup Lighthouse CI
+        run: bun add -g @lhci/cli@0.13.x
+
+      - name: Run Lighthouse CI
+        run: lhci autorun
