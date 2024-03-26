@@ -13,10 +13,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 20.9.0
-      - name: npm install, build
+      - name: bun install
         run: |
-          npm install
-          npm run build
+          bun install
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.4.x
