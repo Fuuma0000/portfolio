@@ -16,10 +16,10 @@ jobs:
         with:
           node-version: '14' # 使用したい Node.js のバージョンを指定します
 
-      # - name: Setup Bun
-      #   uses: oven-sh/setup-bun@v1
-      #   with:
-      #     bun-version: latest
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
 
       - name: Install dependencies
         run: bun install
@@ -30,5 +30,5 @@ jobs:
       - name: Setup Lighthouse CI
         run: bun add -g @lhci/cli@0.13.x
 
-      # - name: Run Lighthouse CI
-      #   run: lhci autorun
+      - name: Run Lighthouse CI
+        run: lhci autorun
