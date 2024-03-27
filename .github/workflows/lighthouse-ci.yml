@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - feature/*
 jobs:
   lhci:
     name: Lighthouse CI
@@ -10,11 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14' # 使用したい Node.js のバージョンを指定します
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
