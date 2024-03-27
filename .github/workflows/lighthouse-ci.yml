@@ -23,10 +23,10 @@ jobs:
       - name: Build app
         run: |
           bun run build
-          ls build
-          ls build/static
-          ls build/static/js
-          cat build/index.html
+          ls ./build
+          ls ./build/static
+          ls ./build/static/js
+          cat ./build/index.html
 
       - name: Setup Lighthouse CI
         run: bun add -g @lhci/cli@0.13.x
