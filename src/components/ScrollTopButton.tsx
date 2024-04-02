@@ -7,6 +7,7 @@ const ScrollToTopButton = () => {
   const controls = useAnimation();
 
   const scrollToTop = async () => {
+    setShowBalloon(false);
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     controls.stop();
