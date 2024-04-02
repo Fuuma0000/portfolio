@@ -59,12 +59,14 @@ const ScrollToTopButton = () => {
         <div className="absolute z-20 h-4 w-4 rounded-full bg-black md:h-5 md:w-5"></div>
       </div>
 
+      {/* 吹き出しの表示 */}
       <div
         className={`absolute -left-28 bottom-5 -translate-x-1/2 transform rounded-lg bg-white p-4 shadow-md transition-opacity duration-500 ${
           true ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
         Click Me to Scroll Top
+        <div className="absolute right-0 top-1/2 h-0 w-0 translate-y-1/2 transform border-8 border-solid border-red-600 border-l-transparent border-t-transparent"></div>
       </div>
     </motion.button>
   );
