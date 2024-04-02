@@ -1,7 +1,9 @@
 import { animateScroll as scroll } from 'react-scroll';
 import { motion, useAnimation } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const ScrollToTopButton = () => {
+  const [showBalloon, setShowBalloon] = useState(false); // 吹き出しの表示状態を管理するstate
   const controls = useAnimation();
 
   const scrollToTop = async () => {
@@ -36,6 +38,28 @@ const ScrollToTopButton = () => {
     });
   };
 
+  useEffect(() => {
+    // ページがスクロールされるたびに吹き出しの表示を更新
+    // 200は少し前から表示する調整用の値
+    const handleScroll = () => {
+      if (
+        window.innerHeight + window.scrollY + 200 >=
+        document.body.offsetHeight
+      ) {
+        setShowBalloon(true);
+      } else {
+        setShowBalloon(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // コンポーネントがアンマウントされるときにイベントリスナーをクリーンアップ
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <motion.button
       initial={{ y: 0 }}
@@ -62,7 +86,7 @@ const ScrollToTopButton = () => {
       {/* 吹き出しの表示 */}
       <div
         className={`absolute -left-28 bottom-5 -translate-x-1/2 transform rounded-lg bg-white p-4 shadow-md transition-opacity duration-500 ${
-          true ? 'opacity-100' : 'pointer-events-none opacity-0'
+          showBalloon ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
         Click Me to Scroll Top
