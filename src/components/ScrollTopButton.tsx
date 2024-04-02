@@ -1,30 +1,13 @@
 import { animateScroll as scroll } from 'react-scroll';
 import { motion, useAnimation } from 'framer-motion';
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const ScrollToTopButton = () => {
+  const [showBalloon, setShowBalloon] = useState(false); // 吹き出しの表示状態を管理するstate
   const controls = useAnimation();
-  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  // useEffect(() => {
-  //   const handleMouseMoveEvent = (e: MouseEvent) => {
-  //     handleMouseMove(e);
-  //   };
-
-  //   // マウスが動いたときのイベントリスナーを設定
-  //   window.addEventListener('mousemove', handleMouseMoveEvent);
-
-  //   // コンポーネントがアンマウントされるときにイベントリスナーをクリーンアップ
-  //   return () => {
-  //     window.removeEventListener('mousemove', handleMouseMoveEvent);
-  //   };
-  // }, []); // 空の依存配列を指定して、コンポーネントがマウントされたときだけ実行されるようにする
-
-  // const handleMouseMove = (e: MouseEvent) => {
-  //   setMousePosition({ x: e.clientX, y: e.clientY });
-  // };
 
   const scrollToTop = async () => {
+    setShowBalloon(false);
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     controls.stop();
@@ -56,14 +39,38 @@ const ScrollToTopButton = () => {
     });
   };
 
+  useEffect(() => {
+    // ページがスクロールされるたびに吹き出しの表示を更新
+    // 200は少し前から表示する調整用の値
+    const handleScroll = () => {
+      if (
+        window.innerHeight + window.scrollY + 200 >=
+        document.body.offsetHeight
+      ) {
+        setShowBalloon(true);
+      } else {
+        setShowBalloon(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // コンポーネントがアンマウントされるときにイベントリスナーをクリーンアップ
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <motion.button
       initial={{ y: 0 }}
       animate={controls}
-      className={`fixed bottom-4 right-4 h-20  w-20 rounded-full bg-icon px-6 md:h-24 md:w-24 md:px-8 md:py-4 `}
+      className={`fixed bottom-4 right-4 h-20 w-20 rounded-full bg-icon px-6 md:h-24 md:w-24 md:px-8 md:py-4 `}
       onClick={() => {
         scrollToTop();
       }}
+      onMouseEnter={() => setShowBalloon(true)}
+      onMouseLeave={() => setShowBalloon(false)}
       aria-label="トップへスクロール"
     >
       <div className="flex h-full w-full items-center justify-center">
@@ -76,14 +83,18 @@ const ScrollToTopButton = () => {
           }}
         ></div>
         {/* 黒い丸 */}
-        <div
-          className="absolute z-20 h-4 w-4 rounded-full bg-black md:h-5 md:w-5"
-          style={
-            {
-              // transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-            }
-          }
-        ></div>
+        <div className="absolute z-20 h-4 w-4 rounded-full bg-black md:h-5 md:w-5"></div>
+      </div>
+
+      {/* 吹き出しの表示 */}
+      <div
+        className={`absolute -left-28 bottom-5 -translate-x-1/2 transform rounded-lg bg-white p-4 shadow-md transition-opacity duration-500 ${
+          showBalloon ? 'opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+      >
+        Click Me to Scroll Top
+        {/* 三角形 */}
+        <div className="absolute -right-1 top-[21px] h-0 w-0 rotate-[-45deg] transform border-8 border-solid border-white border-l-transparent border-t-transparent"></div>
       </div>
     </motion.button>
   );
