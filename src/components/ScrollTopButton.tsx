@@ -68,7 +68,6 @@ const ScrollToTopButton = () => {
         Click Me to Scroll Top
         {/* 三角形 */}
         <div className="absolute -right-1 top-[21px] h-0 w-0 rotate-[-45deg] transform border-8 border-solid border-white border-l-transparent border-t-transparent"></div>
-        {/* <div className="absolute right-0 top-1/2 h-4 w-4 rotate-45 transform border-r border-t border-white"></div> */}
       </div>
     </motion.button>
   );
