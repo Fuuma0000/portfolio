@@ -1,10 +1,12 @@
 import heroImg from '@/assets/eye.webp';
+import mobileHeroImg from '@/assets/mobile-eye.webp';
 import '@/styles.css';
 import { useRecoilState } from 'recoil';
 import { isDarkModeState } from '@/state/isDarkModeState';
 
 const Profile = ({ index }: { index: number }) => {
   const [isDarkMode] = useRecoilState(isDarkModeState);
+  const imageUrl = window.innerWidth < 768 ? mobileHeroImg : heroImg;
 
   return (
     <div
@@ -21,7 +23,7 @@ const Profile = ({ index }: { index: number }) => {
           {/* 画像を表示 */}
           <div className="order-first">
             <img
-              src={heroImg}
+              src={imageUrl}
               alt=""
               rel="preload"
               className="no-drag w-64 md:w-96"
