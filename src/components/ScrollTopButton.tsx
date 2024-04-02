@@ -69,6 +69,8 @@ const ScrollToTopButton = () => {
       onClick={() => {
         scrollToTop();
       }}
+      onMouseEnter={() => setShowBalloon(true)}
+      onMouseLeave={() => setShowBalloon(false)}
       aria-label="トップへスクロール"
     >
       <div className="flex h-full w-full items-center justify-center">
