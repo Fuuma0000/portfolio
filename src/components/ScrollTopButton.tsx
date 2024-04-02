@@ -4,25 +4,6 @@ import { motion, useAnimation } from 'framer-motion';
 
 const ScrollToTopButton = () => {
   const controls = useAnimation();
-  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  // useEffect(() => {
-  //   const handleMouseMoveEvent = (e: MouseEvent) => {
-  //     handleMouseMove(e);
-  //   };
-
-  //   // マウスが動いたときのイベントリスナーを設定
-  //   window.addEventListener('mousemove', handleMouseMoveEvent);
-
-  //   // コンポーネントがアンマウントされるときにイベントリスナーをクリーンアップ
-  //   return () => {
-  //     window.removeEventListener('mousemove', handleMouseMoveEvent);
-  //   };
-  // }, []); // 空の依存配列を指定して、コンポーネントがマウントされたときだけ実行されるようにする
-
-  // const handleMouseMove = (e: MouseEvent) => {
-  //   setMousePosition({ x: e.clientX, y: e.clientY });
-  // };
 
   const scrollToTop = async () => {
     await new Promise((resolve) => setTimeout(resolve, 500));
@@ -76,14 +57,7 @@ const ScrollToTopButton = () => {
           }}
         ></div>
         {/* 黒い丸 */}
-        <div
-          className="absolute z-20 h-4 w-4 rounded-full bg-black md:h-5 md:w-5"
-          style={
-            {
-              // transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-            }
-          }
-        ></div>
+        <div className="absolute z-20 h-4 w-4 rounded-full bg-black md:h-5 md:w-5"></div>
       </div>
     </motion.button>
   );
