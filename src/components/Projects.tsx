@@ -74,7 +74,12 @@ const Project: React.FC<
           {(images.length === 1 ? [...images, ...images] : images).map(
             (image, index) => (
               <div key={index}>
-                <img src={image} alt={title} className="rounded-lg" />
+                <img
+                  src={image}
+                  alt={title}
+                  loading="lazy"
+                  className="rounded-lg"
+                />
               </div>
             ),
           )}
