@@ -1,9 +1,8 @@
 module.exports = {
   ci: {
     collect: {
-      startServerCommand: 'bun start',
-      url: ['http://localhost:3000/'],
-      numberOfRuns: 1,
+      staticDistDir: './dist/index.html',
+      isSinglePageApplication: true,
       settings: { chromeFlags: '--no-sandbox', preset: 'desktop' },
     },
     upload: {
