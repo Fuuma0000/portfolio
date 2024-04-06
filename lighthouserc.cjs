@@ -1,8 +1,8 @@
 module.exports = {
   ci: {
     collect: {
-      staticDistDir: 'dist', // ビルドされたファイルのディレクトリ
-      isSinglePageApplication: true, // シングルページアプリケーションの場合は true
+      startServerCommand: 'bun run preview', // サーバーを起動するコマンド
+      url: ['http://localhost:4173/'],
       settings: { chromeFlags: '--no-sandbox', preset: 'desktop' }, // Lighthouseの設定
     },
     upload: {
