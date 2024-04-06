@@ -3,10 +3,7 @@ module.exports = {
     collect: {
       startServerCommand: 'bun run preview',
       url: ['http://localhost:4173/'],
-      settings: [
-        { chromeFlags: '--no-sandbox', preset: 'desktop' },
-        { chromeFlags: '--no-sandbox', preset: 'mobile' },
-      ],
+      settings: { chromeFlags: '--no-sandbox', preset: 'mobile' },
     },
     upload: {
       target: 'temporary-public-storage', // 結果をアップロードする場所の指定
