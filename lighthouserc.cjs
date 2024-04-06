@@ -2,7 +2,6 @@ module.exports = {
   ci: {
     collect: {
       staticDistDir: 'dist', // ビルドされたファイルのディレクトリ
-      url: ['http://localhost/dist/index.html'],
       isSinglePageApplication: true, // シングルページアプリケーションの場合は true
       settings: { chromeFlags: '--no-sandbox', preset: 'desktop' }, // Lighthouseの設定
     },
