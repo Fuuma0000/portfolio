@@ -38,7 +38,7 @@ jobs:
         run: bun i --frozen-lockfile
 
   lighthouseci:
-    needs: install-dependencies
+    needs: install-cache-dependencies
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Commit
