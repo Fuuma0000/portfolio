@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      staticDistDir: 'dist',
+      staticDistDir: './dist',
       isSinglePageApplication: true,
       settings: { chromeFlags: '--no-sandbox', preset: 'desktop' },
     },
