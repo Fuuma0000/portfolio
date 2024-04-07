@@ -1,8 +1,8 @@
 module.exports = {
   ci: {
     collect: {
-      startServerCommand: 'bun run preview',
-      url: ['http://localhost:4173/'],
+      staticDistDir: './dist',
+      url: ['/'],
       settings: { chromeFlags: '--no-sandbox', preset: 'desktop' },
     },
     upload: {
