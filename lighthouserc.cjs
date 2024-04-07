@@ -2,6 +2,7 @@ module.exports = {
   ci: {
     collect: {
       staticDistDir: './dist',
+      url: ['/'],
       settings: { chromeFlags: '--no-sandbox', preset: 'desktop' },
     },
     upload: {
