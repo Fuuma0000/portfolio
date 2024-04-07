@@ -6,7 +6,9 @@ module.exports = {
       settings: { chromeFlags: '--no-sandbox', preset: 'desktop' },
     },
     upload: {
-      target: 'temporary-public-storage', // 結果をアップロードする場所の指定
+      target: 'lhci',
+      serverBaseUrl: 'https://lhci.fuuma.net/',
+      token: process.env.LHCI_BUILD_TOKEN,
     },
   },
 };
