@@ -8,7 +8,7 @@ module.exports = {
     upload: {
       target: 'lhci',
       serverBaseUrl: 'https://lhci.fuuma.net/',
-      token: process.env.LHCI_BUILD_TOKEN,
+      token: '3f9b7c47-c34d-450f-8aa2-8a69ba283cee',
     },
   },
 };
