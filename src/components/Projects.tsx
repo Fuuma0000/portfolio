@@ -197,24 +197,6 @@ const Projects = ({ index }: { index: number }) => {
       ],
     },
     {
-      images: [pixiv_botImg1, pixiv_botImg2, pixiv_botImg3],
-      title: 'Pixiv匿名共有Bot',
-      description:
-        'DiscordのサーバーでPixivのIDを登録すると、ブックマークで自動でBotが匿名で共有し、他の人と共有出来るBotを作成しました。\n botのステータスやユーザの使用率などの監視も初挑戦しました',
-      duration: '1月10日 〜 1月23日',
-      technologies: ['python', 'discord.py', 'sqlite', 'Grafana', 'prometheus'],
-      links: [
-        {
-          url: 'https://github.com/Fuuma0000/pixiv_bot',
-          displayName: 'Github',
-        },
-        {
-          url: 'https://grafana.fuuma.net/public-dashboards/e7355c9ab1fd4073bfe4ec2e772a63b8?orgId=1&refresh=5s&from=now%2Fd&to=now%2Fd',
-          displayName: 'Grafana',
-        },
-      ],
-    },
-    {
       images: [tunaGariImg1, tunaGariImg2],
       title: 'TunaGari',
       description:
